@@ -24,6 +24,7 @@ function Login() {
 
   return (
     <div className="login-container">
+      
       <div className="login-left">
         <h2>Log in to MyDorm</h2>
         <form onSubmit={handleSubmit}>

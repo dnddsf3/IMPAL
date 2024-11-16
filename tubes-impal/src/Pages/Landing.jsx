@@ -15,10 +15,10 @@ const Landing = () => {
       <header className="header fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4 bg-white shadow-md z-50">
         <img src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png" alt="Telkom University" className="logo h-12" />
         <nav className="navbar flex justify-center space-x-10 flex-grow">
-          <button onClick={() => navigate("/")} className="text-[#B41515] hover:text-[#B41515] border-b-2 border-[#B41515] pb-1">Home</button>
+          <button onClick={() => navigate("/")} className="text-[#B41515] hover:text-[#B41515] border-b-2 border-[#B41515] pb-1">Beranda</button>
           <button onClick={() => navigate("/tentang")} className="text-black hover:text-[#B41515]">Tentang</button>
 
-          {/* Dropdown for Asrama */}
+          {/* dropdown Asrama */}
           <div className="relative">
             <button
               onClick={toggleDropdown}
@@ -28,20 +28,20 @@ const Landing = () => {
               <span className="ml-2">▼</span>
             </button>
 
-            {/* Dropdown Menu */}
+            {/* dropdown */}
             {isDropdownOpen && (
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
                 <button
-                  onClick={() => navigate("/asrama/kamar")}
+                  onClick={() => navigate("/asrama/asrama")}
                   className="block px-4 py-2 text-black hover:bg-gray-200"
                 >
-                  Informasi Kamar
+                  Informasi Asrama
                 </button>
                 <button
-                  onClick={() => navigate("/asrama/fasilitas")}
+                  onClick={() => navigate("/asrama/berita")}
                   className="block px-4 py-2 text-black hover:bg-gray-200"
                 >
-                  Fasilitas
+                  Berita
                 </button>
                 <button
                   onClick={() => navigate("/asrama/galeri")}
@@ -62,9 +62,15 @@ const Landing = () => {
           <button onClick={() => navigate("/kontak")} className="text-black hover:text-[#B41515]">Kontak</button>
         </nav>
         <div className="header-icons flex space-x-4">
-          <span className="search-icon text-2xl">🔍</span>
-          <span className="profile-icon text-2xl" onClick={() => navigate("/profile")}>👤</span>
+          {/*<span className="search-icon text-2xl">🔍</span>*/}
+          <img 
+            src="public/user.png" 
+            alt="User Profile" 
+            className="profile-icon w-8 h-8 rounded-full cursor-pointer"
+            onClick={() => navigate("/profile")} 
+          />
         </div>
+
       </header>
 
       <section className="hero text-center py-12 bg-gray-200 mt-20">

@@ -5,8 +5,8 @@ import Signup from './Pages/Signup';
 import Profile from './Pages/Profile';
 /*import Tentang from './Pages/Tentang';
 import Kontak from './Pages/Kontak';
-import Kamar from './Pages/Kamar';
-import Fasilitas from './Pages/Fasilitas';
+import Kamar from './Pages/Asrama';
+import Fasilitas from './Pages/Berita';
 import Galeri from './Pages/Galeri';
 import TokenPay from './Pages/TokenPay';*/
 
@@ -20,8 +20,8 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         {/*<Route path="/tentang" element={<Tentang />} />
         <Route path="/kontak" element={<Kontak />} />
-        <Route path="/kamar" element={<Kamar />} />
-        <Route path="/fasilitas" element={<Fasilitas />} />
+        <Route path="/asrama" element={<Asrama />} />
+        <Route path="/berita" element={<Berita />} />
         <Route path="/galeri" element={<Galeri />} />
         <Route path="/tokenpay" element={<TokenPay />} />*/}
       </Routes>
