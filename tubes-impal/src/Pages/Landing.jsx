@@ -156,7 +156,12 @@ const Landing = () => {
         <div className="news-card bg-white shadow-md p-4 rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
           <h3 className="font-semibold text-black">Welcoming Day</h3>
           <p className="text-black mt-5">Pada 5 Oktober 2024, asrama menyelenggarakan *Welcoming Day* bagi penghuni baru. Acara ini meliputi tur asrama, perkenalan antar-penghuni, dan permainan kelompok untuk membangun kebersamaan. Semoga penghuni baru merasa nyaman dan cepat beradaptasi di lingkungan asrama!</p>
-          <button className="btn bg-[#B41515] text-white mt-5">Baca Selengkapnya</button>
+          <button
+            className="mt-4 bg-[#B41515] text-white px-4 py-2 rounded hover:bg-red-700"
+            onClick={() => navigate("/berita/welcoming-day")}
+          >
+            Baca Selengkapnya
+          </button>
         </div>
         <div className="news-card bg-white shadow-md p-4 rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
           <h3 className="font-semibold text-black">Lomba Kebersihan Antar-Kamar</h3>

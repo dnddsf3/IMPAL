@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 import "../../src/index.css";
 import { useNavigate } from 'react-router-dom';
 
+/*
+to do:
+# validasi
+full name
+username
+email - formatnya bener
+pass - min 8, ada huruf ada angka?
+*/
+
 function Signup() {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');

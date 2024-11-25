@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import "../../src/index.css";
 import { useNavigate } from 'react-router-dom';
 
+/*
+to do:
+beneran cek ada ga akun yg di input
+*/
+
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

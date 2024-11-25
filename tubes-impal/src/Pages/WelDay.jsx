@@ -1,0 +1,1 @@
+// buat berita selengkapnya berita welcoming day
