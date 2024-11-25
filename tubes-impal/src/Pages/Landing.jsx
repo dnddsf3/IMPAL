@@ -3,12 +3,20 @@ import "../../src/index.css";
 import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isAsramaDropdownOpen, setIsAsramaDropdownOpen] = useState(false);
+  const [isKontakDropdownOpen, setIsKontakDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const toggleAsramaDropdown = () => {
+    setIsAsramaDropdownOpen(!isAsramaDropdownOpen);
+    setIsKontakDropdownOpen(false); // Close other dropdown
   };
+  
+  const toggleKontakDropdown = () => {
+    setIsKontakDropdownOpen(!isKontakDropdownOpen);
+    setIsAsramaDropdownOpen(false); // Close other dropdown
+  };
+  
 
   return (
     <div className="landing-page">
@@ -21,7 +29,7 @@ const Landing = () => {
           {/* dropdown Asrama */}
           <div className="relative">
             <button
-              onClick={toggleDropdown}
+              onClick={toggleAsramaDropdown}
               className="text-black hover:text-[#B41515] flex items-center"
             >
               Asrama
@@ -29,7 +37,7 @@ const Landing = () => {
             </button>
 
             {/* dropdown */}
-            {isDropdownOpen && (
+            {isAsramaDropdownOpen && (
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
                 <button
                   onClick={() => navigate("/asrama/asrama")}
@@ -59,8 +67,43 @@ const Landing = () => {
             )}
           </div>
 
-          <button onClick={() => navigate("/kontak")} className="text-black hover:text-[#B41515]">Kontak</button>
+          {/* dropdown Kontak */}
+          <div className="relative">
+            <button
+              onClick={toggleKontakDropdown}
+              className="text-black hover:text-[#B41515] flex items-center"
+            >
+              Kontak
+              <span className="ml-2">▼</span>
+            </button>
+
+            {/* dropdown */}
+            {isKontakDropdownOpen && (
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
+                <button
+                  onClick={() => navigate("/kontak/hubungi")}
+                  className="block px-4 py-2 text-black hover:bg-gray-200"
+                >
+                  Hubungi
+                </button>
+                <button
+                  onClick={() => navigate("/kontak/masalah")}
+                  className="block px-4 py-2 text-black hover:bg-gray-200"
+                >
+                  Laporan Masalah
+                </button>
+                <button
+                  onClick={() => navigate("/kontak/faq")}
+                  className="block px-4 py-2 text-black hover:bg-gray-200"
+                >
+                  FAQ
+                </button>
+              </div>
+            )}
+          </div>
+          
         </nav>
+
         <div className="header-icons flex space-x-4">
           {/*<span className="search-icon text-2xl">🔍</span>*/}
           <img 
