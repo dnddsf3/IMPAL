@@ -2,15 +2,6 @@ import React, { useState } from 'react';
 import "../../src/index.css";
 import { useNavigate } from 'react-router-dom';
 
-/*
-to do:
-# validasi
-full name
-username
-email - formatnya bener
-pass - min 8, ada huruf ada angka?
-*/
-
 function Signup() {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
@@ -19,16 +10,27 @@ function Signup() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  const validatePassword = (password) => {
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    return passwordRegex.test(password);
+  };
+
   const handleSignup = (e) => {
     e.preventDefault();
+
     if (name === '' || username === '' || email === '' || password === '') {
       setError('Semua field harus diisi!');
       return;
     }
-    if (!email.includes('@')) {
+    if (!email.includes('@') || !email.includes('.')) {
       setError('Email tidak valid!');
       return;
     }
+    if (!validatePassword(password)) {
+      setError('Password harus minimal 8 karakter dan mengandung huruf serta angka.');
+      return;
+    }
+
     setError('');
     alert('Akun berhasil dibuat!');
     navigate('/');

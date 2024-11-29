@@ -10,8 +10,9 @@ import Kamar from './Pages/Asrama';
 import Fasilitas from './Pages/Berita';
 import Galeri from './Pages/Galeri';
 import TokenPay from './Pages/TokenPay';
-import WelDay from './Pages/WelDay';
 */
+import WelDay from './Pages/WelDay';
+
 
 function App() {
   return (
@@ -25,11 +26,12 @@ function App() {
         <Route path="/tentang" element={<Tentang />} />
         <Route path="/kontak" element={<Kontak />} />
         <Route path="/asrama" element={<Asrama />} />
-        <Route path="/berita" element={<Berita />} />
-        <Route path="/galeri" element={<Galeri />} />
-        <Route path="/tokenpay" element={<TokenPay />} />
-        <Route path="/welcoming-day" element={<WelDay />} />
+        <Route path="/asrama/berita" element={<Berita />} />
+        <Route path="/asrama/galeri" element={<Galeri />} />
+        <Route path="/asrama/tokenpay" element={<TokenPay />} />
         */}
+        <Route path="/asrama/berita/welcoming-day" element={<WelDay />} />
+        
       </Routes>
     </Router>
   );
