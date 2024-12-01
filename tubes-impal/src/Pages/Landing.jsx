@@ -107,9 +107,9 @@ const Landing = () => {
         <div className="header-icons flex space-x-4">
           {/*<span className="search-icon text-2xl">🔍</span>*/}
           <img 
-            src="public/user.png" 
+            src="/user.png" 
             alt="User Profile" 
-            className="profile-icon w-8 h-8 rounded-full cursor-pointer"
+            className="profile-icon w-8 h-8 cursor-pointer"
             onClick={() => navigate("/profile")} 
           />
         </div>
@@ -187,53 +187,57 @@ const Landing = () => {
     </section>
 
 
-      <section className="activities py-12 px-4">
-        <h2 className="text-2xl font-bold text-center text-[#B41515]">KEGIATAN ASRAMA</h2>
-        <p className="text-4x1 mt-4 font-medium text-center text-[#444444]">Kegiatan asrama untuk meningkatkan kebersamaan, keterampilan, dan pengalaman berharga bagi seluruh penghuni.</p>
-        <div className="activity-list flex flex-col items-center mt-8 space-y-4">
-          <div className="activity bg-white p-4 rounded-lg shadow-md w-full max-w-lg">
-            <h3 className="font-semibold text-[#B41515]">Dorm Sport and Fun Games</h3>
-            <p className="font-medium text-[#444444]">Kerja tim dan penyegaran</p>
-            <p className="text-[#B41515]">08:00 - 16:00</p>
-          </div>
-          <div className="activity bg-white p-4 rounded-lg shadow-md w-full max-w-lg">
-            <h3 className="font-semibold text-[#B41515]">Dorm Percussion</h3>
-            <p className="font-medium text-[#444444]">Belajar tentang harmonis dan kerja sama</p>
-            <p className="text-[#B41515]">09:15</p>
-          </div>
-          <div className="activity bg-white p-4 rounded-lg shadow-md w-full max-w-lg">
-            <h3 className="font-semibold text-[#B41515]">Dorm Academic Week</h3>
-            <p className="font-medium text-[#444444]">Talk Show tentang akademik</p>
-            <p className="text-[#B41515]">10:00 - 12:00</p>
-          </div>
+    <section className="activities py-12 px-4">
+      <h2 className="text-2xl font-bold text-center text-[#B41515]">KEGIATAN ASRAMA</h2>
+      <p className="text-4x1 mt-4 font-medium text-center text-[#444444]">Kegiatan asrama untuk meningkatkan kebersamaan, keterampilan, dan pengalaman berharga bagi seluruh penghuni.</p>
+      <div className="activity-list flex flex-col items-center mt-8 space-y-4">
+        <div className="activity bg-white p-4 rounded-lg shadow-md w-full max-w-lg">
+          <h3 className="font-semibold text-[#B41515]">Dorm Sport and Fun Games</h3>
+          <p className="font-medium text-[#444444]">Kerja tim dan penyegaran</p>
+          <p className="text-[#B41515]">08:00 - 16:00</p>
         </div>
-      </section>
+        <div className="activity bg-white p-4 rounded-lg shadow-md w-full max-w-lg">
+          <h3 className="font-semibold text-[#B41515]">Dorm Percussion</h3>
+          <p className="font-medium text-[#444444]">Belajar tentang harmonis dan kerja sama</p>
+          <p className="text-[#B41515]">09:15</p>
+        </div>
+        <div className="activity bg-white p-4 rounded-lg shadow-md w-full max-w-lg">
+          <h3 className="font-semibold text-[#B41515]">Dorm Academic Week</h3>
+          <p className="font-medium text-[#444444]">Talk Show tentang akademik</p>
+          <p className="text-[#B41515]">10:00 - 12:00</p>
+        </div>
+      </div>
+    </section>
 
-      <section className="map-section py-28 px-8 relative mt-28 flex items-center justify-between">
-        <div className="map-container flex-shrink-0">
-          <img 
-            src="https://hamsa.co.id/wp-content/uploads/2024/01/image_2024-02-07_213323604.png" 
-            alt="Map" 
-            className="map w-96 h-auto rounded-lg"
-          />
-        </div>
-        
-        <div className="text-container ml-10">
-          <h2 className="text-2xl text-[#B41515] font-bold">DORMITORY TELKOM UNIVERSITY</h2>
-          <p className="text-[#1E1E1E] mt-5 text-[#868686]">Alamat: </p>
-          <p className="text-[#1E1E1E] mt-2 text-[#868686]">Bandung Technoplex</p>
-          <p className="text-[#1E1E1E] mt-1 text-[#868686]">Jl. Telekomunikasi Terusan Buah Batu, Kabupaten Bandung, Provinsi Jawa Barat, Indonesia</p>
-        </div>
-      </section>
+    <section className="map-section py-28 px-8 relative mt-28 flex items-center justify-between">
+      <div className="map-container flex-shrink-0">
+        <img 
+          src="https://hamsa.co.id/wp-content/uploads/2024/01/image_2024-02-07_213323604.png" 
+          alt="Map" 
+          className="map w-96 h-auto rounded-lg"
+        />
+      </div>
+      
+      <div className="text-container ml-10">
+        <h2 className="text-2xl text-[#B41515] font-bold">DORMITORY TELKOM UNIVERSITY</h2>
+        <p className="text-[#1E1E1E] mt-5 text-[#868686]">Alamat: </p>
+        <p className="text-[#1E1E1E] mt-2 text-[#868686]">Bandung Technoplex</p>
+        <p className="text-[#1E1E1E] mt-1 text-[#868686]">Jl. Telekomunikasi Terusan Buah Batu, Kabupaten Bandung, Provinsi Jawa Barat, Indonesia</p>
+      </div>
+    </section>
+
 
       <footer className="footer bg-[#B41515] text-white py-12 px-4 text-center">
-        <img src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png" alt="Telkom University" className="footer-logo mx-auto mb-4 h-12" />
-        <div className="footer-links space-x-4">
+        <img
+          src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png"
+          alt="Telkom University"
+          className="footer-logo mx-auto mb-4 h-12"
+        />
+        <div className="footer-links ml-24 mr-24">
           <a href="#link1" className="hover:underline">Link</a>
-          <a href="#link2" className="hover:underline">Link</a>
-          <a href="#contact" className="hover:underline">Kontak</a>
-        </div>
-        <div className="contact-info mt-6">
+          <a href="#link2" className="hover:underline">Link</a>        </div>
+        <div className="contact-info">
+          <div className="kontak font-bold">KONTAK</div>
           <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
           <p>asrama@telkomuniversity.ac.id</p>
           <p>Telkom University Students Dormitory Bandung Technoplex</p>

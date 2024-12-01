@@ -22,7 +22,7 @@ function Signup() {
       setError('Semua field harus diisi!');
       return;
     }
-    if (!email.includes('@') || !email.includes('.')) {
+    if (!email.includes('@') || !email.includes('student.telkomuniversity.ac.id') || !email.includes('@student.telkomuniversity.ac.id')) {
       setError('Email tidak valid!');
       return;
     }

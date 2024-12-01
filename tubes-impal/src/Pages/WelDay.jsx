@@ -133,7 +133,7 @@ const WelDay = () => {
           <img
             src="public/user2.png"
             alt="User Profile"
-            className="profile-icon w-8 h-8 rounded-full cursor-pointer"
+            className="profile-icon w-8 h-8 cursor-pointer"
             onClick={() => navigate("/profile")}
           />
         </div>
@@ -202,20 +202,24 @@ const WelDay = () => {
         </div>
         </div>
 
-      <footer className="footer bg-[#B41515] text-white py-12 px-4 text-center">
-        <img src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png" alt="Telkom University" className="footer-logo mx-auto mb-4 h-12" />
-        <div className="footer-links space-x-4">
+        <footer className="footer bg-[#B41515] text-white py-12 px-4 text-center">
+        <img
+          src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png"
+          alt="Telkom University"
+          className="footer-logo mx-auto mb-4 h-12"
+        />
+        <div className="footer-links ml-24 mr-24">
           <a href="#link1" className="hover:underline">Link</a>
-          <a href="#link2" className="hover:underline">Link</a>
-          <a href="#contact" className="hover:underline">Kontak</a>
-        </div>
-        <div className="contact-info mt-6">
+          <a href="#link2" className="hover:underline">Link</a>        </div>
+        <div className="contact-info">
+          <div className="kontak font-bold">KONTAK</div>
           <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
           <p>asrama@telkomuniversity.ac.id</p>
           <p>Telkom University Students Dormitory Bandung Technoplex</p>
           <p>Jl. Telekomunikasi Terusan Buah Batu, Kabupaten Bandung, Provinsi Jawa Barat, Indonesia</p>
         </div>
       </footer>
+      
     </div>
   );
 };

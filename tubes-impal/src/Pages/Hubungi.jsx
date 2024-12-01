@@ -1,31 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import "../../src/index.css";
+import { useNavigate } from "react-router-dom";
 
-const Profile = () => {
+const Hubungi = () => {
   const navigate = useNavigate();
-  const [isAsramaDropdownOpen, setIsAsramaDropdownOpen] = useState(false);
-  const [isKontakDropdownOpen, setIsKontakDropdownOpen] = useState(false);
-  const [userProfile, setUserProfile] = useState({ name: "John Doe", email: "john.doe@example.com" });
+  const [isAsramaDropdownOpen, setAsramaDropdownOpen] = useState(false);
+  const [isKontakDropdownOpen, setKontakDropdownOpen] = useState(false);
 
-  const toggleAsramaDropdown = () => {
-    setIsAsramaDropdownOpen(!isAsramaDropdownOpen);
-  };
-
-  const toggleKontakDropdown = () => {
-    setIsKontakDropdownOpen(!isKontakDropdownOpen);
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("userToken");
-    navigate("/login");
-  };
-
-  useEffect(() => {
-  }, []);
+  const toggleAsramaDropdown = () => setAsramaDropdownOpen(!isAsramaDropdownOpen);
+  const toggleKontakDropdown = () => setKontakDropdownOpen(!isKontakDropdownOpen);
 
   return (
-    <div className="profile-page">
+    <div className="hubungi-page">
+      {/* Header */}
       <header className="header fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4 bg-white shadow-md z-50">
         <img
           src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png"
@@ -45,15 +32,18 @@ const Profile = () => {
           >
             Tentang
           </button>
+
+          {/* Dropdown Asrama */}
           <div className="relative">
             <button
               onClick={toggleAsramaDropdown}
               className="text-[#1E1E1E] hover:text-[#B41515] flex items-center"
             >
-              Asrama <span className="ml-2">▼</span>
+              Asrama
+              <span className="ml-2">▼</span>
             </button>
             {isAsramaDropdownOpen && (
-              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 w-48 z-10">
                 <button
                   onClick={() => navigate("/asrama/asrama")}
                   className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
@@ -81,15 +71,18 @@ const Profile = () => {
               </div>
             )}
           </div>
+
+          {/* Dropdown Kontak */}
           <div className="relative">
             <button
               onClick={toggleKontakDropdown}
-              className="text-[#1E1E1E] hover:text-[#B41515] flex items-center"
+              className="text-[#B41515] hover:text-[#B41515] border-b-2 border-[#B41515] pb-1"
             >
-              Kontak <span className="ml-2">▼</span>
+              Kontak
+              <span className="ml-2">▼</span>
             </button>
             {isKontakDropdownOpen && (
-              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 w-48 z-10">
                 <button
                   onClick={() => navigate("/kontak/hubungi")}
                   className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
@@ -112,25 +105,56 @@ const Profile = () => {
             )}
           </div>
         </nav>
-        <img
-          src="/user2.png"
-          alt="User Profile"
-          className="profile-icon w-8 h-8 cursor-pointer"
-          onClick={() => navigate("/profile")}
-        />
-      </header>
-      <div className="profile-content pt-20 px-8">
-        <h1 className="text-3xl font-bold mb-6">Profil Pengguna</h1>
-        <div className="user-info mb-8">
-          <p>Nama: {userProfile.name}</p>
-          <p>Email: {userProfile.email}</p>
+
+        <div className="header-icons flex space-x-4">
+          <img
+            src="/user.png"
+            alt="User Profile"
+            className="profile-icon w-8 h-8 cursor-pointer"
+            onClick={() => navigate("/profile")}
+          />
         </div>
-        <button
-          onClick={handleLogout}
-          className="bg-[#B41515] text-white py-2 px-4 rounded hover:bg-red-600"
-        >
-          Log Out
-        </button>
+      </header>
+
+      {/* Main Content */}
+      <div className="main-content flex flex-wrap justify-between items-start px-10 py-20">
+        <div className="contact-info w-2/3">
+          <h1 className="text-2xl font-bold mb-4">Kontak Kami</h1>
+          <p className="text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Vivamus lacinia odio vitae vestibulum vestibulum.
+          </p>
+          <div className="flex items-center gap-4 mb-4">
+            <img
+            src="/phone.png"
+            alt="phone"
+            className="profile-icon w-8 h-8 cursor-pointer"
+            />
+            <p>081378424242</p>
+          </div>
+          <div className="flex items-center gap-4 mb-4">
+            <img
+              src="/mail.png"
+              alt="mail"
+              className="profile-icon w-8 h-8 cursor-pointer"
+            />
+            <p>MyDorm2024@telkomuniversity.ac.id</p>
+          </div>
+          <div className="flex items-center gap-4">
+            <img
+              src="/location.png"
+              alt="location"
+              className="profile-icon w-8 h-8 cursor-pointer"
+            />
+            <p>
+              Jl. Telekomunikasi Terusan Buah Batu, Kabupaten Bandung, Provinsi
+              Jawa Barat, Indonesia
+            </p>
+          </div>
+        </div>
+        <div className="image-placeholder bg-gray-200 border-4 border-[#B41515] rounded-lg flex justify-center items-center w-1/3">
+          <span className="text-gray-400">[Gambar Placeholder]</span>
+        </div>
       </div>
 
       <footer className="footer bg-[#B41515] text-white py-12 px-4 text-center">
@@ -150,9 +174,8 @@ const Profile = () => {
           <p>Jl. Telekomunikasi Terusan Buah Batu, Kabupaten Bandung, Provinsi Jawa Barat, Indonesia</p>
         </div>
       </footer>
-
     </div>
   );
 };
 
-export default Profile;
+export default Hubungi;
