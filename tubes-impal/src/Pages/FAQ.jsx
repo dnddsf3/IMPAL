@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../src/index.css";
+import { getChatGPTResponse } from '../API/chatgpt';
 
 const FAQ = () => {
   const navigate = useNavigate();
   const [isAsramaDropdownOpen, setAsramaDropdownOpen] = useState(false);
   const [isKontakDropdownOpen, setKontakDropdownOpen] = useState(false);
+  
   const [chatMessages, setChatMessages] = useState([
     { text: "Halo, DormFriend disini! Ada yang bisa saya bantu mengenai asrama? :)", isBot: true },
   ]);
@@ -48,18 +50,27 @@ const FAQ = () => {
   const toggleAsramaDropdown = () => setAsramaDropdownOpen(!isAsramaDropdownOpen);
   const toggleKontakDropdown = () => setKontakDropdownOpen(!isKontakDropdownOpen);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!userMessage.trim()) return;
 
+    // Menambahkan pesan pengguna ke chat
     setChatMessages([...chatMessages, { text: userMessage, isBot: false }]);
-    setUserMessage("");
+    setUserMessage(""); // Reset input pengguna
 
-    setTimeout(() => {
+    // Menggunakan API untuk mendapatkan respons ChatGPT
+    try {
+      const response = await getChatGPTResponse(userMessage);
       setChatMessages((prev) => [
         ...prev,
-        { text: "Mohon maaf, saya sedang dalam pengembangan dan belum bisa menjawab pertanyaan spesifik. Silakan lihat bagian FAQ.", isBot: true },
+        { text: response, isBot: true },  // Menambahkan respons bot ke chat
       ]);
-    }, 1000);
+    } catch (error) {
+      console.error("Error fetching response from ChatGPT:", error);
+      setChatMessages((prev) => [
+        ...prev,
+        { text: "Maaf, saya tidak bisa menjawab pertanyaan Anda saat ini.", isBot: true },
+      ]);
+    }
   };
 
   return (
@@ -171,7 +182,7 @@ const FAQ = () => {
       <main>
         {/* FAQ Section */}
         <section className="faq-section">
-          <h1 className="faq text-[#b41515] font-bold text-center text-2x1 mb-4">Frequently Asked Questions</h1>
+          <h1 className="faq-judul text-[#b41515] font-bold text-center text-2x1 mb-4">Frequently Asked Questions</h1>
           <p className="faq-description text-center">
             Kami menyediakan jawaban atas pertanyaan umum untuk membantu Anda memahami kebijakan, fasilitas, dan layanan asrama.
           </p>
@@ -222,13 +233,8 @@ const FAQ = () => {
           className="footer-logo mx-auto mb-4 h-12"
         />
         <div className="footer-links ml-24 mr-24">
-          <a href="#link1" className="hover:underline">
-            Link
-          </a>
-          <a href="#link2" className="hover:underline">
-            Link
-          </a>
-        </div>
+          <a href="#link1" className="hover:underline">Link</a>
+          <a href="#link2" className="hover:underline">Link</a>        </div>
         <div className="contact-info">
           <div className="kontak font-bold">KONTAK</div>
           <p>Senin - Jumat: 08.00 - 16.00 WIB</p>

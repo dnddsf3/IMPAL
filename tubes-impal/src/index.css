@@ -255,11 +255,11 @@ body {
   margin: 4rem auto;*/
   padding: 0 2rem;
   color: #1e1e1e;
-  margin-top: 10%;
+  margin-top: 11%;
 }
 
-h1 {
-  color: var(--telkom-red);
+.faq-judul {
+  color: #b41515;
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -270,6 +270,7 @@ h1 {
   max-width: 800px;
   margin: 0 auto 3rem;
   color: #666;
+  margin-bottom: 2rem;
 }
 
 .faq-item {
@@ -304,13 +305,6 @@ h1 {
   padding: 1rem;
 }
 
-.question-icon {
-  background: var(--light-pink);
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  color: var(--telkom-red);
-}
-
 /* DormBot Section */
 .dormbot-section {
   max-width: 800px;
@@ -324,6 +318,7 @@ h1 {
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   padding: 1.5rem;
+  margin-top: 2%;
 }
 
 .chat-messages {
@@ -348,6 +343,7 @@ h1 {
   gap: 0.5rem;
 }
 
+/* ketik pesan */
 .chat-input input {
   flex: 1;
   padding: 0.75rem;
@@ -357,7 +353,16 @@ h1 {
 }
 
 .chat-input button {
-  background: var(--telkom-red);
+  background-color: #666;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.chat-input button:hover{
+  background-color: #b41515;
   color: white;
   border: none;
   padding: 0.75rem 1rem;
