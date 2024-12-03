@@ -18,22 +18,28 @@ function Signup() {
   const handleSignup = (e) => {
     e.preventDefault();
 
+    // Validasi field kosong
     if (name === '' || username === '' || email === '' || password === '') {
       setError('Semua field harus diisi!');
       return;
     }
-    if (!email.includes('@') || !email.includes('student.telkomuniversity.ac.id') || !email.includes('@student.telkomuniversity.ac.id')) {
-      setError('Email tidak valid!');
+
+    // Validasi email
+    if (!email.includes('@') || !email.includes('student.telkomuniversity.ac.id')) {
+      setError('Email tidak valid! Harus menggunakan domain @student.telkomuniversity.ac.id');
       return;
     }
+
+    // Validasi password
     if (!validatePassword(password)) {
       setError('Password harus minimal 8 karakter dan mengandung huruf serta angka.');
       return;
     }
 
+    // Jika semua validasi lolos
     setError('');
     alert('Akun berhasil dibuat!');
-    navigate('/');
+    navigate('/');  // Redirect ke halaman utama setelah registrasi sukses
   };
 
   return (

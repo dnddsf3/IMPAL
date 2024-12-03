@@ -15,6 +15,12 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validasi input kosong
+    if (!username || !password) {
+      setErrorMessage('Username dan password harus diisi!');
+      return;
+    }
+
     try {
       // Kirim data login ke backend menggunakan fetch
       const response = await fetch('http://localhost:3001/login', {
@@ -29,7 +35,7 @@ function Login() {
 
       if (response.status === 200) {
         // Login berhasil
-        navigate('/');
+        navigate('/');  // Redirect ke halaman utama setelah login sukses
       } else {
         setErrorMessage(data.message || 'Login failed');
       }
