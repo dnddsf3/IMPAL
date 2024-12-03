@@ -129,7 +129,7 @@ const Profile = () => {
           onClick={handleLogout}
           className="bg-[#B41515] text-white py-2 px-4 rounded hover:bg-red-600"
         >
-          Log Out
+          Log In
         </button>
       </div>
 

@@ -2,11 +2,6 @@ import React, { useState } from 'react';
 import "../../src/index.css";
 import { useNavigate } from 'react-router-dom';
 
-/*
-to do:
-beneran cek ada ga akun yg di input
-*/
-
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,19 +12,34 @@ function Login() {
     navigate('/signup');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (username === 'user' && password === 'password123') {
-      navigate('/');
-    } else {
-      setErrorMessage('Pastikan masukan Anda benar!');
+    try {
+      // Kirim data login ke backend menggunakan fetch
+      const response = await fetch('http://localhost:3001/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.status === 200) {
+        // Login berhasil
+        navigate('/');
+      } else {
+        setErrorMessage(data.message || 'Login failed');
+      }
+    } catch (error) {
+      setErrorMessage('Error connecting to the server');
     }
   };
 
   return (
     <div className="login-container">
-      
       <div className="login-left">
         <h2>Log in to MyDorm</h2>
         <form onSubmit={handleSubmit}>
