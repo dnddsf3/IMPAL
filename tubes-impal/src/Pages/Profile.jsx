@@ -1,57 +1,52 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import "../../src/index.css";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
-  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('about');
   const [isAsramaDropdownOpen, setIsAsramaDropdownOpen] = useState(false);
   const [isKontakDropdownOpen, setIsKontakDropdownOpen] = useState(false);
-  const [userProfile, setUserProfile] = useState({ name: "John Doe", email: "john.doe@example.com" });
+  const navigate = useNavigate();
 
   const toggleAsramaDropdown = () => {
     setIsAsramaDropdownOpen(!isAsramaDropdownOpen);
+    setIsKontakDropdownOpen(false);
   };
-
+  
   const toggleKontakDropdown = () => {
     setIsKontakDropdownOpen(!isKontakDropdownOpen);
+    setIsAsramaDropdownOpen(false);
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("userToken");
-    navigate("/login");
+  const userProfile = {
+    firstName: 'DINDA',
+    lastName: 'DESFIRA',
+    email: 'dindes@student.telkomuniversity.ac.id',
+    phone: '081238472538',
+    building: 'Gedung A',
+    room: 'Kamar 204',
+    studyProgram: 'S1 Informatika',
+    faculty: 'FIF'
   };
-
-  useEffect(() => {
-  }, []);
 
   return (
     <div className="profile-page">
       <header className="header fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4 bg-white shadow-md z-50">
-        <img
-          src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png"
-          alt="Telkom University"
-          className="logo h-12"
-        />
+        <img src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png" alt="Telkom University" className="logo h-12" />
         <nav className="navbar flex justify-center space-x-10 flex-grow">
-          <button
-            onClick={() => navigate("/")}
-            className="text-[#1E1E1E] hover:text-[#B41515]"
-          >
-            Beranda
-          </button>
-          <button
-            onClick={() => navigate("/tentang")}
-            className="text-[#1E1E1E] hover:text-[#B41515]"
-          >
-            Tentang
-          </button>
+          <button onClick={() => navigate("/")} className="text-[#1E1E1E] hover:text-[#B41515]">Beranda</button>
+          <button onClick={() => navigate("/tentang")} className="text-[#1E1E1E] hover:text-[#B41515]">Tentang</button>
+
+          {/* dropdown Asrama */}
           <div className="relative">
             <button
               onClick={toggleAsramaDropdown}
               className="text-[#1E1E1E] hover:text-[#B41515] flex items-center"
             >
-              Asrama <span className="ml-2">▼</span>
+              Asrama
+              <span className="ml-2">▼</span>
             </button>
+
+            {/* dropdown */}
             {isAsramaDropdownOpen && (
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
                 <button
@@ -81,13 +76,18 @@ const Profile = () => {
               </div>
             )}
           </div>
+
+          {/* dropdown Kontak */}
           <div className="relative">
             <button
               onClick={toggleKontakDropdown}
               className="text-[#1E1E1E] hover:text-[#B41515] flex items-center"
             >
-              Kontak <span className="ml-2">▼</span>
+              Kontak
+              <span className="ml-2">▼</span>
             </button>
+
+            {/* dropdown */}
             {isKontakDropdownOpen && (
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
                 <button
@@ -111,27 +111,89 @@ const Profile = () => {
               </div>
             )}
           </div>
+          
         </nav>
-        <img
-          src="/user2.png"
-          alt="User Profile"
-          className="profile-icon w-8 h-8 cursor-pointer"
-          onClick={() => navigate("/profile")}
-        />
-      </header>
-      <div className="profile-content pt-20 px-8">
-        <h1 className="text-3xl font-bold mb-6">Profil Pengguna</h1>
-        <div className="user-info mb-8">
-          <p>Nama: {userProfile.name}</p>
-          <p>Email: {userProfile.email}</p>
+
+        <div className="header-icons flex space-x-4">
+          {/*<span className="search-icon text-2xl">🔍</span>*/}
+          <img 
+            src="/user.png" 
+            alt="User Profile" 
+            className="profile-icon w-8 h-8 cursor-pointer"
+            onClick={() => navigate("/profile")} 
+          />
         </div>
-        <button
-          onClick={handleLogout}
-          className="bg-[#B41515] text-white py-2 px-4 rounded hover:bg-red-600"
-        >
-          Log In
-        </button>
-      </div>
+
+      </header>
+
+      <main className="max-w-7xl mx-auto px-4 pt-24 pb-12">
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+          <div className="flex items-start space-x-4">
+            <div className="w-24 h-24 bg-gray-200 rounded-full flex-shrink-0"></div>
+            <div>
+              <h1 className="text-xl font-semibold">{userProfile.firstName} {userProfile.lastName}</h1>
+              <p className="text-gray-600">{userProfile.building}</p>
+              <p className="text-gray-600">{userProfile.room}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-sm">
+          <div className="border-b border-gray-200">
+            <nav className="flex space-x-8 px-6">
+              <button
+                className={`py-4 px-1 ${activeTab === 'about' ? 'border-b-2 border-[#B41515] text-[#B41515]' : 'text-gray-500'}`}
+                onClick={() => setActiveTab('about')}
+              >
+                About Me
+              </button>
+              <button
+                className={`py-4 px-1 ${activeTab === 'setting' ? 'border-b-2 border-[#B41515] text-[#B41515]' : 'text-gray-500'}`}
+                onClick={() => setActiveTab('setting')}
+              >
+                Setting
+              </button>
+              <button
+                className={`py-4 px-1 ${activeTab === 'notifications' ? 'border-b-2 border-[#B41515] text-[#B41515]' : 'text-gray-500'}`}
+                onClick={() => setActiveTab('notifications')}
+              >
+                Notifications
+              </button>
+            </nav>
+          </div>
+
+          <div className="p-6">
+            {activeTab === 'about' && (
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-sm text-gray-500 mb-1">First name</h3>
+                  <p className="text-gray-900">{userProfile.firstName}</p>
+                </div>
+                <div>
+                  <h3 className="text-sm text-gray-500 mb-1">Last name</h3>
+                  <p className="text-gray-900">{userProfile.lastName}</p>
+                </div>
+                <div>
+                  <h3 className="text-sm text-gray-500 mb-1">Email address</h3>
+                  <p className="text-gray-900">{userProfile.email}</p>
+                </div>
+                <div>
+                  <h3 className="text-sm text-gray-500 mb-1">Phone</h3>
+                  <p className="text-gray-900">{userProfile.phone}</p>
+                </div>
+                <div>
+                  <h3 className="text-sm text-gray-500 mb-1">Study program</h3>
+                  <p className="text-gray-900">{userProfile.studyProgram}</p>
+                </div>
+                <div>
+                  <h3 className="text-sm text-gray-500 mb-1">Faculty</h3>
+                  <p className="text-gray-900">{userProfile.faculty}</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </main>
 
       <footer className="footer bg-[#B41515] text-white py-12 px-4 text-center">
         <img
@@ -150,7 +212,6 @@ const Profile = () => {
           <p>Jl. Telekomunikasi Terusan Buah Batu, Kabupaten Bandung, Provinsi Jawa Barat, Indonesia</p>
         </div>
       </footer>
-
     </div>
   );
 };
