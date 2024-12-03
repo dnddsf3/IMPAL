@@ -8,11 +8,11 @@ import Tentang from './Pages/Tentang';
 import Kamar from './Pages/Asrama';
 import Fasilitas from './Pages/Berita';
 import Galeri from './Pages/Galeri';
-import TokenPay from './Pages/TokenPay';
 */
 import Hubungi from './Pages/Hubungi';
 import WelDay from './Pages/WelDay';
 import FAQ from './Pages/FAQ';
+import TokenPay from './Pages/TokenPay';
 
 
 function App() {
@@ -29,12 +29,11 @@ function App() {
         <Route path="/asrama" element={<Asrama />} />
         <Route path="/asrama/berita" element={<Berita />} />
         <Route path="/asrama/galeri" element={<Galeri />} />
-        <Route path="/asrama/tokenpay" element={<TokenPay />} />
         */}
         <Route path="/kontak/hubungi" element={<Hubungi />}/>
         <Route path="/asrama/berita/welcoming-day" element={<WelDay />} />
         <Route path="/kontak/faq" element={<FAQ />} />
-        
+        <Route path="/asrama/tokenpay" element={<TokenPay />} />
       </Routes>
     </Router>
   );

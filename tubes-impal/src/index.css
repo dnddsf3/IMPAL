@@ -369,3 +369,132 @@ body {
   border-radius: 0.5rem;
   cursor: pointer;
 }
+
+/*------------------------------------------- TokenPay ------------------------------------------------*/
+
+/* Hero */
+.tp-hero {
+  text-align: center;
+  background-color: #b41515;
+  padding: 50px 0;
+  color: white;
+}
+
+.tp-hero h1 {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+/* Progress Bar */
+.tp-progress-bar {
+  position: relative;
+  margin-top: 20px;
+}
+
+.tp-steps {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tp-step {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.tp-step.active {
+  background-color: #b41515;
+}
+
+.tp-progress-line {
+  width: 100%;
+  height: 5px;
+  background-color: #ddd;
+  margin-top: 10px;
+}
+
+.tp-progress {
+  width: 0%;
+  height: 100%;
+  background-color: #b41515;
+  transition: width 0.3s ease;
+}
+
+/* Forms */
+.tp-step-form {
+  display: none;
+}
+
+.tp-step-form.hidden {
+  display: none;
+}
+
+.tp-step-form input,
+.tp-step-form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Set the text color for each step's content */
+.tp-step-form h2,
+.tp-step-form p,
+.tp-step-form button {
+  color: #1e1e1e; /* Set text color */
+}
+
+/* Buttons */
+.tp-step-form button {
+  background-color: #b41515;
+  color: white;
+  font-weight: bold;
+}
+
+.tp-denomination-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.tp-denomination-button {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tp-denomination-button:hover {
+  background-color: #f1f1f1;
+}
+
+.tp-payment-button {
+  padding: 15px;
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.tp-payment-button:hover {
+  background-color: #f1f1f1;
+}
+
+.tp-primary-button {
+  background-color: #b41515;
+  color: white;
+  font-size: 16px;
+}
