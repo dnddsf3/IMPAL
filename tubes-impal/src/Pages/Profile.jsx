@@ -191,6 +191,76 @@ const Profile = () => {
                 </div>
               </div>
             )}
+
+            {activeTab === 'setting' && (
+              <div>
+                <h2 className="text-lg font-medium mb-4">Settings</h2>
+                <ul>
+                  <li className="py-2 border-b border-gray-200">
+                    <a href="#" className="text-[#1E1E1E] hover:text-[#B41515]">Edit profile</a>
+                  </li>
+                  <li className="py-2 border-b border-gray-200">
+                    <a href="#" className="text-[#1E1E1E] hover:text-[#B41515]">Help</a>
+                  </li>
+                  <li className="py-2 border-b border-gray-200">
+                    <a href="#" className="text-[#1E1E1E] hover:text-[#B41515]">Terms and conditions</a>
+                  </li>
+                  <li className="py-2 border-b border-gray-200">
+                    <a href="#" className="text-[#1E1E1E] hover:text-[#B41515]">Privacy policy</a>
+                  </li>
+                  <li className="py-2 border-b border-gray-200">
+                    <a href="#" className="text-[#1E1E1E] hover:text-[#B41515]">Change password</a>
+                  </li>
+                  <li className="py-2">
+                    <a href="#" className="text-[#1E1E1E] hover:text-[#B41515]">Log out</a>
+                  </li>
+                </ul>
+              </div>
+            )}
+
+            {activeTab === 'notifications' && (
+              <div>
+                <h2 className="text-lg font-medium mb-4">Notifications</h2>
+                <div className="space-y-4">
+                  <div className="bg-white rounded-lg shadow-sm p-4">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center text-white font-bold">
+                        <span>🤑</span>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-medium mb-1">Token - Harga Hemat</h3>
+                        <p className="text-gray-600">Rp 21.200</p>
+                        <p className="text-gray-500 text-sm">11/11/2024</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-lg shadow-sm p-4">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-[#F87171] rounded-full w-10 h-10 flex items-center justify-center text-white font-bold">
+                        <span>❌</span>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-medium mb-1">Laporan masalah</h3>
+                        <p className="text-gray-600">Lemari rusak, ada yang patah</p>
+                        <p className="text-gray-500 text-sm">08/10/2024</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-lg shadow-sm p-4">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center text-white font-bold">
+                        <span>🤑</span>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-medium mb-1">Token - Harga Hemat</h3>
+                        <p className="text-gray-600">Rp 105.200</p>
+                        <p className="text-gray-500 text-sm">03/10/2024</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </main>
