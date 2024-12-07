@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 const Profile = () => {
   const [activeTab, setActiveTab] = useState('about');
   const [isAsramaDropdownOpen, setIsAsramaDropdownOpen] = useState(false);
@@ -27,6 +28,32 @@ const Profile = () => {
     studyProgram: 'S1 Informatika',
     faculty: 'FIF'
   };
+  const notifications = [
+    {
+      id: 1,
+      date: '11/11/2024',
+      type: 'token',
+      title: 'Token - Harga Hemat',
+      amount: 'Rp 21.200',
+      status: 'Transaksi berhasil'
+    },
+    {
+      id: 2,
+      date: '08/10/2024',
+      type: 'repair',
+      title: 'Laporan masalah',
+      description: 'Pesan: Lemari rusak, ada yang patah',
+      status: 'Perbaikan selesai'
+    },
+    {
+      id: 3,
+      date: '03/10/2024',
+      type: 'token',
+      title: 'Token - Harga Hemat',
+      amount: 'Rp 105.200',
+      status: 'Transaksi berhasil'
+    }
+  ];
 
   return (
     <div className="profile-page">
@@ -219,67 +246,80 @@ const Profile = () => {
             )}
 
             {activeTab === 'notifications' && (
-              <div>
-                <h2 className="text-lg font-medium mb-4">Notifications</h2>
-                <div className="space-y-4">
-                  <div className="bg-white rounded-lg shadow-sm p-4">
-                    <div className="flex items-start space-x-4">
-                      <div className="bg-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center text-white font-bold">
-                        <span>🤑</span>
+              <div className="space-y-4">
+              {notifications.map((notification) => (
+                <div key={notification.id} className="border rounded-lg p-4">
+                  <div className="flex justify-between items-start">
+                    <div className="flex space-x-4">
+                      <div className={`p-2 rounded-lg ${notification.type === 'token' ? 'bg-red-100' : 'bg-gray-100'}`}>
+                        {notification.type === 'token' ? (
+                          <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                        ) : (
+                          <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                          </svg>
+                        )}
                       </div>
                       <div>
-                        <h3 className="text-lg font-medium mb-1">Token - Harga Hemat</h3>
-                        <p className="text-gray-600">Rp 21.200</p>
-                        <p className="text-gray-500 text-sm">11/11/2024</p>
+                        <p className="text-sm text-gray-500">{notification.date}</p>
+                        <h4 className="font-medium">{notification.title}</h4>
+                        {notification.amount && <p>{notification.amount}</p>}
+                        {notification.description && <p>{notification.description}</p>}
                       </div>
                     </div>
-                  </div>
-                  <div className="bg-white rounded-lg shadow-sm p-4">
-                    <div className="flex items-start space-x-4">
-                      <div className="bg-[#F87171] rounded-full w-10 h-10 flex items-center justify-center text-white font-bold">
-                        <span>❌</span>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-medium mb-1">Laporan masalah</h3>
-                        <p className="text-gray-600">Lemari rusak, ada yang patah</p>
-                        <p className="text-gray-500 text-sm">08/10/2024</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white rounded-lg shadow-sm p-4">
-                    <div className="flex items-start space-x-4">
-                      <div className="bg-[#FCD34D] rounded-full w-10 h-10 flex items-center justify-center text-white font-bold">
-                        <span>🤑</span>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-medium mb-1">Token - Harga Hemat</h3>
-                        <p className="text-gray-600">Rp 105.200</p>
-                        <p className="text-gray-500 text-sm">03/10/2024</p>
-                      </div>
+                    <div>
+                      <span className="text-sm text-gray-500">{notification.status}</span>
+                      <button className="text-sm text-red-600 block mt-1">Lihat lebih lanjut</button>
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
+            </div>
             )}
           </div>
         </div>
       </main>
 
-      <footer className="footer bg-[#B41515] text-white py-12 px-4 text-center">
-        <img
-          src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png"
-          alt="Telkom University"
-          className="footer-logo mx-auto mb-4 h-12"
-        />
-        <div className="footer-links ml-24 mr-24">
-          <a href="#link1" className="hover:underline">Link</a>
-          <a href="#link2" className="hover:underline">Link</a>        </div>
-        <div className="contact-info">
-          <div className="kontak font-bold">KONTAK</div>
-          <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
-          <p>asrama@telkomuniversity.ac.id</p>
-          <p>Telkom University Students Dormitory Bandung Technoplex</p>
-          <p>Jl. Telekomunikasi Terusan Buah Batu, Kabupaten Bandung, Provinsi Jawa Barat, Indonesia</p>
+      <footer className="bg-red-700 text-white mt-auto">
+        <div className="container mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <img src="/telkom-logo-white.png" alt="Telkom University" className="h-12 mb-4" />
+              <div className="flex space-x-4">
+                <a href="#" className="hover:text-gray-200">
+                  <img src="/instagram-icon.svg" alt="Instagram" className="w-6 h-6" />
+                </a>
+                <a href="#" className="hover:text-gray-200">
+                  <img src="/whatsapp-icon.svg" alt="WhatsApp" className="w-6 h-6" />
+                </a>
+                <a href="#" className="hover:text-gray-200">
+                  <img src="/youtube-icon.svg" alt="YouTube" className="w-6 h-6" />
+                </a>
+              </div>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-4">LINK</h3>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-4">LINK</h3>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-4">KONTAK</h3>
+              <div className="space-y-2">
+                <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
+                <p>asrama@telkomuniversity.ac.id</p>
+                <p className="mt-4">
+                  Telkom University Students<br />
+                  Dormitory Bandung Technoplex<br />
+                  Jl. Telekomunikasi Terusan Buah Batu,<br />
+                  Kabupaten Bandung, Provinsi Jawa Barat<br />
+                  Indonesia
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
