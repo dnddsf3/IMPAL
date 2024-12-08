@@ -40,7 +40,7 @@ const Landing = () => {
             {isAsramaDropdownOpen && (
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
                 <button
-                  onClick={() => navigate("/asrama/asrama")}
+                  onClick={() => navigate("/asrama/informasi-asrama")}
                   className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
                 >
                   Informasi Asrama
@@ -116,7 +116,7 @@ const Landing = () => {
 
       </header>
 
-      <section className="hero text-center py-12 bg-gray-200 mt-20">
+      <section className="hero text-center py-12 bg-gray-200">
         {/*<img src="dormitory.jpg" alt="Dormitory" className="hero-image mx-auto w-3/4 md:w-1/2" />*/}
         <img src="https://via.placeholder.com/1440x600" alt="Dormitory" className="hero-image mx-auto w-3/4 md:w-1/2" />
         <h1 className="text-3xl font-bold mt-6">TELKOM UNIVERSITY DORMITORY</h1>

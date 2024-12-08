@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "../../src/styles.css";
 import { useNavigate } from 'react-router-dom';
 
-const DormitoryWebsite = () => {
+const Berita = () => {
   const navigate = useNavigate();
   const [isAsramaDropdownOpen, setIsAsramaDropdownOpen] = useState(false);
   const [isKontakDropdownOpen, setIsKontakDropdownOpen] = useState(false);
@@ -50,7 +50,7 @@ const DormitoryWebsite = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen">
       {/* Header */}
       <header className="header fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4 bg-white shadow-md z-50">
         <img src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png" alt="Telkom University" className="logo h-12" />
@@ -72,7 +72,7 @@ const DormitoryWebsite = () => {
             {isAsramaDropdownOpen && (
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
                 <button
-                  onClick={() => navigate("/asrama/asrama")}
+                  onClick={() => navigate("/asrama/informasi-asrama")}
                   className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
                 >
                   Informasi Asrama
@@ -146,7 +146,7 @@ const DormitoryWebsite = () => {
       </header>
 
       {/* Hero Section */}
-      <div className="bg-red-700 py-16 mt-20">
+      <div className="bg-red-700 py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-white text-4xl font-bold text-center">BERITA ASRAMA</h1>
         </div>
@@ -164,7 +164,7 @@ const DormitoryWebsite = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
-                <h2 className="font-medium text-lg mb-4">{item.title}</h2>
+                <h2 className="font-medium text-lg mb-4 text-gray-900">{item.title}</h2>
                 <div className="flex justify-between items-center text-sm text-gray-600 mb-4">
                   <span>By {item.publisher}</span>
                   <span>{item.date}</span>
@@ -196,39 +196,61 @@ const DormitoryWebsite = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <img src="/telkom-logo-white.png" alt="Telkom University" className="h-12 mb-4" />
+              <img 
+              src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png" 
+              alt="Telkom University" 
+              className="h-12 mb-4 brightness-0 invert"
+              />
               <div className="flex space-x-4">
-                <a href="#" className="hover:text-gray-200">
+                <a href="https://instagram.com/telkomuniversity" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
                   <img src="/instagram-icon.svg" alt="Instagram" className="w-6 h-6" />
                 </a>
-                <a href="#" className="hover:text-gray-200">
+                <a href="https://wa.me/yourwhatsappnumber" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
                   <img src="/whatsapp-icon.svg" alt="WhatsApp" className="w-6 h-6" />
                 </a>
-                <a href="#" className="hover:text-gray-200">
+                <a href="https://youtube.com/@TelkomUniversity" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
                   <img src="/youtube-icon.svg" alt="YouTube" className="w-6 h-6" />
                 </a>
               </div>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-4">LINK</h3>
+              <h3 className="font-bold text-lg mb-4">LINK CEPAT</h3>
+              <ul className="space-y-2">
+                <li><a href="/" className="hover:text-gray-200">Beranda</a></li>
+                <li><a href="/tentang" className="hover:text-gray-200">Tentang</a></li>
+                <li><a href="/asrama/asrama" className="hover:text-gray-200">Informasi Asrama</a></li>
+                <li><a href="/asrama/berita" className="hover:text-gray-200">Berita</a></li>
+                <li><a href="/asrama/tokenpay" className="hover:text-gray-200">TokenPay</a></li>
+              </ul>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-4">LINK</h3>
+              <h3 className="font-bold text-lg mb-4">LINK PENTING</h3>
+              <ul className="space-y-2">
+                <li><a href="https://telkomuniversity.ac.id" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">Telkom University</a></li>
+                <li><a href="https://igracias.telkomuniversity.ac.id" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">iGracias</a></li>
+                <li><a href="https://lms.telkomuniversity.ac.id" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">CeLOE</a></li>
+                <li><a href="/kontak/faq" className="hover:text-gray-200">FAQ</a></li>
+                <li><a href="/kontak/masalah" className="hover:text-gray-200">Laporan Masalah</a></li>
+              </ul>
             </div>
             <div>
               <h3 className="font-bold text-lg mb-4">KONTAK</h3>
               <div className="space-y-2">
                 <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
                 <p>asrama@telkomuniversity.ac.id</p>
-                <p className="mt-4">
-                  Telkom University Students<br />
-                  Dormitory Bandung Technoplex<br />
-                  Jl. Telekomunikasi Terusan Buah Batu,<br />
-                  Kabupaten Bandung, Provinsi Jawa Barat<br />
-                  Indonesia
-                </p>
+                <p>WhatsApp: +62 812-3456-7890</p>
+                <div className="mt-4">
+                  <h4 className="font-semibold mb-2">Alamat:</h4>
+                  <p>Gedung Asrama Putra/Putri</p>
+                  <p>Telkom University</p>
+                  <p>Jl. Telekomunikasi No. 1</p>
+                  <p>Bandung, Jawa Barat 40257</p>
+                </div>
               </div>
             </div>
+          </div>
+          <div className="border-t border-white/20 mt-8 pt-8 text-center">
+            <p>&copy; {new Date().getFullYear()} Telkom University. All rights reserved.</p>
           </div>
         </div>
       </footer>
@@ -236,4 +258,4 @@ const DormitoryWebsite = () => {
   );
 };
 
-export default DormitoryWebsite;
+export default Berita;

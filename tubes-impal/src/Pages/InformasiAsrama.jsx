@@ -18,7 +18,7 @@ import {
   Building2
 } from 'lucide-react';
 
-const AsramaInfo = () => {
+const InformasiAsrama = () => {
   const [isAsramaDropdownOpen, setIsAsramaDropdownOpen] = useState(false);
   const [isKontakDropdownOpen, setIsKontakDropdownOpen] = useState(false);
   const navigate = useNavigate();
@@ -35,89 +35,102 @@ const AsramaInfo = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
-      <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between py-4">
-            <img 
-              src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png" 
-              alt="Telkom University" 
-              className="h-8"
-            />
-            
-            <nav className="hidden md:flex space-x-8">
-              <button onClick={() => navigate("/")} className="text-gray-800 hover:text-red-700">Beranda</button>
-              <button onClick={() => navigate("/tentang")} className="text-gray-800 hover:text-red-700">Tentang</button>
-              
-              {/* Asrama Dropdown */}
-              <div className="relative">
-                <button
-                  onClick={toggleAsramaDropdown}
-                  className="text-gray-800 hover:text-red-700 flex items-center"
-                >
-                  Asrama
-                  <span className="ml-1">▼</span>
-                </button>
-                
-                {isAsramaDropdownOpen && (
-                  <div className="absolute top-full left-0 w-48 bg-white shadow-lg rounded mt-1">
-                    <div className="py-1">
-                      <button onClick={() => navigate("/asrama/informasi")} className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100">
-                        Informasi Asrama
-                      </button>
-                      <button onClick={() => navigate("/asrama/berita")} className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100">
-                        Berita
-                      </button>
-                      <button onClick={() => navigate("/asrama/galeri")} className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100">
-                        Galeri
-                      </button>
-                      <button onClick={() => navigate("/asrama/tokenpay")} className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100">
-                        TokenPay
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
+      {/* Updated Header section */}
+      <header className="header fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4 bg-white shadow-md z-50">
+        <img src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png" alt="Telkom University" className="logo h-12" />
+        <nav className="navbar flex justify-center space-x-10 flex-grow">
+          <button onClick={() => navigate("/")} className="text-[#1E1E1E] hover:text-[#B41515]">Beranda</button>
+          <button onClick={() => navigate("/tentang")} className="text-[#1E1E1E] hover:text-[#B41515]">Tentang</button>
 
-              {/* Kontak Dropdown */}
-              <div className="relative">
-                <button
-                  onClick={toggleKontakDropdown}
-                  className="text-gray-800 hover:text-red-700 flex items-center"
-                >
-                  Kontak
-                  <span className="ml-1">▼</span>
-                </button>
-                
-                {isKontakDropdownOpen && (
-                  <div className="absolute top-full left-0 w-48 bg-white shadow-lg rounded mt-1">
-                    <div className="py-1">
-                      <button onClick={() => navigate("/kontak/hubungi")} className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100">
-                        Hubungi
-                      </button>
-                      <button onClick={() => navigate("/kontak/masalah")} className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100">
-                        Laporan Masalah
-                      </button>
-                      <button onClick={() => navigate("/kontak/faq")} className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100">
-                        FAQ
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </nav>
+          {/* dropdown Asrama */}
+          <div className="relative">
+            <button
+              onClick={toggleAsramaDropdown}
+              className="text-[#1E1E1E] hover:text-[#B41515] flex items-center"
+            >
+              Asrama
+              <span className="ml-2">▼</span>
+            </button>
 
-            <div className="flex items-center space-x-4">
-              <button onClick={() => navigate("/profile")} className="p-1">
-                <img src="/user.png" alt="Profile" className="w-8 h-8 rounded-full" />
-              </button>
-            </div>
+            {/* dropdown */}
+            {isAsramaDropdownOpen && (
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
+                <button
+                  onClick={() => navigate("/asrama/informasi-asrama")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Informasi Asrama
+                </button>
+                <button
+                  onClick={() => navigate("/asrama/berita")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Berita
+                </button>
+                <button
+                  onClick={() => navigate("/asrama/galeri")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Galeri
+                </button>
+                <button
+                  onClick={() => navigate("/asrama/tokenpay")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  TokenPay
+                </button>
+              </div>
+            )}
           </div>
+
+          {/* dropdown Kontak */}
+          <div className="relative">
+            <button
+              onClick={toggleKontakDropdown}
+              className="text-[#1E1E1E] hover:text-[#B41515] flex items-center"
+            >
+              Kontak
+              <span className="ml-2">▼</span>
+            </button>
+
+            {/* dropdown */}
+            {isKontakDropdownOpen && (
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
+                <button
+                  onClick={() => navigate("/kontak/hubungi")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Hubungi
+                </button>
+                <button
+                  onClick={() => navigate("/kontak/masalah")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Laporan Masalah
+                </button>
+                <button
+                  onClick={() => navigate("/kontak/faq")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  FAQ
+                </button>
+              </div>
+            )}
+          </div>
+        </nav>
+
+        <div className="header-icons flex space-x-4">
+          <img 
+            src="/user.png" 
+            alt="User Profile" 
+            className="profile-icon w-8 h-8 cursor-pointer"
+            onClick={() => navigate("/profile")} 
+          />
         </div>
       </header>
 
       {/* Hero Section */}
-      <div className="relative h-[60vh] mt-16">
+      <div className="relative h-[60vh]">
         <img 
           src="/asrama-hero.jpg" 
           alt="Asrama Telkom University"
@@ -154,6 +167,9 @@ const AsramaInfo = () => {
               alt="Kamar Asrama"
               className="w-full rounded-lg shadow-lg"
             />
+            <p className="text-gray-700">
+              Asrama putra terdiri atas 10 gedung, total kamar di asrama Telkom University adalah 94 kamar per gedung asrama, dengan daya tampung sebesar 3.760 orang (kapasitas maksimal 4 orang per kamar).
+            </p>
           </div>
         </div>
       </section>
@@ -162,7 +178,7 @@ const AsramaInfo = () => {
       <section className="bg-gray-100 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-red-800 mb-12">FASILITAS</h2>
-          <div className="grid grid-cols-3 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-3 md:grid-cols-5 gap-6 text-gray-900">
             <FacilityCard icon={<Clock className="text-red-800" />} title="Keamanan 24 Jam" />
             <FacilityCard icon={<Utensils className="text-red-800" />} title="Dapur Umum" />
             <FacilityCard icon={<Users className="text-red-800" />} title="4 Orang Dalam Satu Kamar" />
@@ -187,8 +203,8 @@ const AsramaInfo = () => {
         <h2 className="text-3xl font-bold text-center text-red-800 mb-12">TATA TERTIB</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-bold mb-4">DO'S</h3>
-            <ol className="list-decimal list-inside space-y-2">
+            <h3 className="text-xl font-bold mb-4 text-gray-900">DO'S</h3>
+            <ol className="list-decimal list-inside space-y-2 text-gray-900">
               <li>Berpakaian sopan dan rapi</li>
               <li>Berada di asrama sebelum pukul 21:00 WIB</li>
               <li>Menjaga kebersihan</li>
@@ -214,30 +230,65 @@ const AsramaInfo = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-red-800 text-white">
+      <footer className="bg-red-700 text-white mt-auto">
         <div className="container mx-auto px-4 py-8">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <img 
-                src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png" 
-                alt="Telkom University" 
-                className="h-12 mb-4 brightness-0 invert"
+              src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png" 
+              alt="Telkom University" 
+              className="h-12 mb-4 brightness-0 invert"
               />
               <div className="flex space-x-4">
-                <a href="#" className="hover:text-gray-300">Instagram</a>
-                <a href="#" className="hover:text-gray-300">YouTube</a>
+                <a href="https://instagram.com/telkomuniversity" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
+                  <img src="/instagram-icon.svg" alt="Instagram" className="w-6 h-6" />
+                </a>
+                <a href="https://wa.me/yourwhatsappnumber" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
+                  <img src="/whatsapp-icon.svg" alt="WhatsApp" className="w-6 h-6" />
+                </a>
+                <a href="https://youtube.com/@TelkomUniversity" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
+                  <img src="/youtube-icon.svg" alt="YouTube" className="w-6 h-6" />
+                </a>
               </div>
             </div>
             <div>
-              <h4 className="font-bold mb-4">KONTAK</h4>
-              <p>Senin - Jumat: 08:00 - 16:00 WIB</p>
-              <p>asrama@telkomuniversity.ac.id</p>
+              <h3 className="font-bold text-lg mb-4">LINK CEPAT</h3>
+              <ul className="space-y-2">
+                <li><a href="/" className="hover:text-gray-200">Beranda</a></li>
+                <li><a href="/tentang" className="hover:text-gray-200">Tentang</a></li>
+                <li><a href="/asrama/asrama" className="hover:text-gray-200">Informasi Asrama</a></li>
+                <li><a href="/asrama/berita" className="hover:text-gray-200">Berita</a></li>
+                <li><a href="/asrama/tokenpay" className="hover:text-gray-200">TokenPay</a></li>
+              </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">ALAMAT</h4>
-              <p>Telkom University Students Dormitory Bandung Technoplex</p>
-              <p>Jl. Telekomunikasi Terusan Buah Batu Bandung, Indonesia</p>
+              <h3 className="font-bold text-lg mb-4">LINK PENTING</h3>
+              <ul className="space-y-2">
+                <li><a href="https://telkomuniversity.ac.id" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">Telkom University</a></li>
+                <li><a href="https://igracias.telkomuniversity.ac.id" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">iGracias</a></li>
+                <li><a href="https://lms.telkomuniversity.ac.id" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">CeLOE</a></li>
+                <li><a href="/kontak/faq" className="hover:text-gray-200">FAQ</a></li>
+                <li><a href="/kontak/masalah" className="hover:text-gray-200">Laporan Masalah</a></li>
+              </ul>
             </div>
+            <div>
+              <h3 className="font-bold text-lg mb-4">KONTAK</h3>
+              <div className="space-y-2">
+                <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
+                <p>asrama@telkomuniversity.ac.id</p>
+                <p>WhatsApp: +62 812-3456-7890</p>
+                <div className="mt-4">
+                  <h4 className="font-semibold mb-2">Alamat:</h4>
+                  <p>Gedung Asrama Putra/Putri</p>
+                  <p>Telkom University</p>
+                  <p>Jl. Telekomunikasi No. 1</p>
+                  <p>Bandung, Jawa Barat 40257</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-white/20 mt-8 pt-8 text-center">
+            <p>&copy; {new Date().getFullYear()} Telkom University. All rights reserved.</p>
           </div>
         </div>
       </footer>
@@ -256,4 +307,4 @@ const FacilityCard = ({ icon, title }) => {
   );
 };
 
-export default AsramaInfo;
+export default InformasiAsrama;

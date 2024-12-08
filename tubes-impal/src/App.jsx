@@ -15,6 +15,7 @@ import Hubungi from './Pages/Hubungi';
 import WelDay from './Pages/WelDay';
 import FAQ from './Pages/FAQ';
 import TokenPay from './Pages/TokenPay';
+import NotificationDetail from './Pages/DetailNotifikasi';
 
 
 function App() {
@@ -34,11 +35,12 @@ function App() {
         <Route path="/asrama/galeri" element={<Galeri />} />
         */}
         <Route path="/asrama/berita" element={<Berita />} />
-        <Route path="/asrama/informasiAsrama" element={<InformasiAsrama />} />
+        <Route path="/asrama/informasi-asrama" element={<InformasiAsrama />} />
         <Route path="/kontak/hubungi" element={<Hubungi />}/>
         <Route path="/asrama/berita/welcoming-day" element={<WelDay />} />
         <Route path="/kontak/faq" element={<FAQ />} />
         <Route path="/asrama/tokenpay" element={<TokenPay />} />
+        <Route path="/notifications/:id" element={<NotificationDetail />} />
       </Routes>
     </Router>
   );

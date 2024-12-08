@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import NotificationDetail from './DetailNotifikasi';
 
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState('about');
   const [isAsramaDropdownOpen, setIsAsramaDropdownOpen] = useState(false);
   const [isKontakDropdownOpen, setIsKontakDropdownOpen] = useState(false);
+  const [selectedNotification, setSelectedNotification] = useState(null);
   const navigate = useNavigate();
 
   const toggleAsramaDropdown = () => {
@@ -43,7 +45,22 @@ const Profile = () => {
       type: 'repair',
       title: 'Laporan masalah',
       description: 'Pesan: Lemari rusak, ada yang patah',
-      status: 'Perbaikan selesai'
+      status: 'Perbaikan selesai',
+      details: {
+        name: 'Dinda D',
+        email: 'dindes@student.telkomuniversity.ac.id',
+        phone: '081238472538',
+        location: 'Gedung A kamar 204',
+        problemType: 'Fasilitas rusak atau tidak memadai',
+        evidence: 'bukti_rusak.png',
+        resolution: {
+          submissionTime: '08 October 2024 09:00',
+          receivedTime: '08 October 2024 09:12',
+          completionTime: '08 October 2024 13:05',
+          resolutionImage: 'masalah_diperbaiki.png',
+          resolutionNote: 'Lemari cukup diisi barang yang tidak terlalu berat ya teh...'
+        }
+      }
     },
     {
       id: 3,
@@ -54,6 +71,10 @@ const Profile = () => {
       status: 'Transaksi berhasil'
     }
   ];
+
+  const handleNotificationClick = (id) => {
+    navigate(`/notifications/${id}`); // Mengarahkan ke URL dengan ID
+  };
 
   return (
     <div className="profile-page">
@@ -77,7 +98,7 @@ const Profile = () => {
             {isAsramaDropdownOpen && (
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
                 <button
-                  onClick={() => navigate("/asrama/asrama")}
+                  onClick={() => navigate("/asrama/informasi-asrama")}
                   className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
                 >
                   Informasi Asrama
@@ -153,12 +174,12 @@ const Profile = () => {
 
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 pt-24 pb-12">
+      <main className="max-w-7xl mx-auto px-4 pt-12 pb-12">
         <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
           <div className="flex items-start space-x-4">
             <div className="w-24 h-24 bg-gray-200 rounded-full flex-shrink-0"></div>
             <div>
-              <h1 className="text-xl font-semibold">{userProfile.firstName} {userProfile.lastName}</h1>
+              <h1 className="text-xl font-semibold text-gray-900">{userProfile.firstName} {userProfile.lastName}</h1>
               <p className="text-gray-600">{userProfile.building}</p>
               <p className="text-gray-600">{userProfile.room}</p>
             </div>
@@ -220,29 +241,15 @@ const Profile = () => {
             )}
 
             {activeTab === 'setting' && (
-              <div>
-                <h2 className="text-lg font-medium mb-4">Settings</h2>
-                <ul>
-                  <li className="py-2 border-b border-gray-200">
-                    <a href="#" className="text-[#1E1E1E] hover:text-[#B41515]">Edit profile</a>
-                  </li>
-                  <li className="py-2 border-b border-gray-200">
-                    <a href="#" className="text-[#1E1E1E] hover:text-[#B41515]">Help</a>
-                  </li>
-                  <li className="py-2 border-b border-gray-200">
-                    <a href="#" className="text-[#1E1E1E] hover:text-[#B41515]">Terms and conditions</a>
-                  </li>
-                  <li className="py-2 border-b border-gray-200">
-                    <a href="#" className="text-[#1E1E1E] hover:text-[#B41515]">Privacy policy</a>
-                  </li>
-                  <li className="py-2 border-b border-gray-200">
-                    <a href="#" className="text-[#1E1E1E] hover:text-[#B41515]">Change password</a>
-                  </li>
-                  <li className="py-2">
-                    <a href="#" className="text-[#1E1E1E] hover:text-[#B41515]">Log out</a>
-                  </li>
-                </ul>
-              </div>
+              <div className="space-y-4 text-gray-900">
+              <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Edit profile</button>
+              <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Help</button>
+              <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Terms and conditions</button>
+              <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Privacy policy</button>
+              <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Change password</button>
+              <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Log out</button>
+            </div>
+
             )}
 
             {activeTab === 'notifications' && (
@@ -263,15 +270,20 @@ const Profile = () => {
                         )}
                       </div>
                       <div>
-                        <p className="text-sm text-gray-500">{notification.date}</p>
-                        <h4 className="font-medium">{notification.title}</h4>
+                        <p className="text-sm text-gray-900">{notification.date}</p>
+                        <h4 className="font-medium text-gray-900">{notification.title}</h4>
                         {notification.amount && <p>{notification.amount}</p>}
                         {notification.description && <p>{notification.description}</p>}
                       </div>
                     </div>
                     <div>
                       <span className="text-sm text-gray-500">{notification.status}</span>
-                      <button className="text-sm text-red-600 block mt-1">Lihat lebih lanjut</button>
+                      <button 
+                        className="text-sm text-red-600 block mt-1"
+                        onClick={() => handleNotificationClick(2)}
+                      >
+                        Lihat lebih lanjut
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -282,43 +294,69 @@ const Profile = () => {
         </div>
       </main>
 
+      {selectedNotification && (
+        <NotificationDetail 
+          notification={selectedNotification} 
+          onClose={() => setSelectedNotification(null)} 
+        />
+      )}
+
+      {/* Footer */}
       <footer className="bg-red-700 text-white mt-auto">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <img src="/telkom-logo-white.png" alt="Telkom University" className="h-12 mb-4" />
               <div className="flex space-x-4">
-                <a href="#" className="hover:text-gray-200">
+                <a href="https://instagram.com/telkomuniversity" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
                   <img src="/instagram-icon.svg" alt="Instagram" className="w-6 h-6" />
                 </a>
-                <a href="#" className="hover:text-gray-200">
+                <a href="https://wa.me/yourwhatsappnumber" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
                   <img src="/whatsapp-icon.svg" alt="WhatsApp" className="w-6 h-6" />
                 </a>
-                <a href="#" className="hover:text-gray-200">
+                <a href="https://youtube.com/@TelkomUniversity" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
                   <img src="/youtube-icon.svg" alt="YouTube" className="w-6 h-6" />
                 </a>
               </div>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-4">LINK</h3>
+              <h3 className="font-bold text-lg mb-4">LINK CEPAT</h3>
+              <ul className="space-y-2">
+                <li><a href="/" className="hover:text-gray-200">Beranda</a></li>
+                <li><a href="/tentang" className="hover:text-gray-200">Tentang</a></li>
+                <li><a href="/asrama/asrama" className="hover:text-gray-200">Informasi Asrama</a></li>
+                <li><a href="/asrama/berita" className="hover:text-gray-200">Berita</a></li>
+                <li><a href="/asrama/tokenpay" className="hover:text-gray-200">TokenPay</a></li>
+              </ul>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-4">LINK</h3>
+              <h3 className="font-bold text-lg mb-4">LINK PENTING</h3>
+              <ul className="space-y-2">
+                <li><a href="https://telkomuniversity.ac.id" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">Telkom University</a></li>
+                <li><a href="https://igracias.telkomuniversity.ac.id" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">iGracias</a></li>
+                <li><a href="https://lms.telkomuniversity.ac.id" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">CeLOE</a></li>
+                <li><a href="/kontak/faq" className="hover:text-gray-200">FAQ</a></li>
+                <li><a href="/kontak/masalah" className="hover:text-gray-200">Laporan Masalah</a></li>
+              </ul>
             </div>
             <div>
               <h3 className="font-bold text-lg mb-4">KONTAK</h3>
               <div className="space-y-2">
                 <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
                 <p>asrama@telkomuniversity.ac.id</p>
-                <p className="mt-4">
-                  Telkom University Students<br />
-                  Dormitory Bandung Technoplex<br />
-                  Jl. Telekomunikasi Terusan Buah Batu,<br />
-                  Kabupaten Bandung, Provinsi Jawa Barat<br />
-                  Indonesia
-                </p>
+                <p>WhatsApp: +62 812-3456-7890</p>
+                <div className="mt-4">
+                  <h4 className="font-semibold mb-2">Alamat:</h4>
+                  <p>Gedung Asrama Putra/Putri</p>
+                  <p>Telkom University</p>
+                  <p>Jl. Telekomunikasi No. 1</p>
+                  <p>Bandung, Jawa Barat 40257</p>
+                </div>
               </div>
             </div>
+          </div>
+          <div className="border-t border-white/20 mt-8 pt-8 text-center">
+            <p>&copy; {new Date().getFullYear()} Telkom University. All rights reserved.</p>
           </div>
         </div>
       </footer>
