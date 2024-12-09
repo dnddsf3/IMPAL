@@ -498,3 +498,309 @@ body {
   color: white;
   font-size: 16px;
 }
+
+/*------------------------------------------- Tentang ------------------------------------------------*/
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+/* Header Styles */
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar li {
+  cursor: pointer;
+}
+
+.navbar .active {
+  color: #d72323;
+  font-weight: bold;
+}
+
+.search-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-profile input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.header-banner {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #d72323;
+  color: white;
+}
+
+.header-banner h1 {
+  font-size: 2rem;
+}
+
+/* About Section */
+.about-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.about-section h2 {
+  color: #d72323;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  margin: 20px 0;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.dormitory-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.dormitory-images img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Capacity Section */
+.capacity-section {
+  background-color: #f4f4f4;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.capacity-section h2 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.capacity-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 150px;
+}
+
+.card h3 {
+  color: #d72323;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Students Management Pillar */
+.students-pillars {
+  padding: 40px 20px;
+  background-color: #d72323;
+  color: white;
+  text-align: center;
+}
+
+.students-pillars h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.students-pillars p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.students-pillars ul {
+  margin-top: 20px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.students-pillars li {
+  margin-bottom: 10px;
+}
+
+/* Logo Section */
+.logo-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.logo-section h2 {
+  font-size: 2rem;
+  color: #d72323;
+  margin-bottom: 20px;
+}
+
+.logo-section img {
+  width: 150px;
+  margin: 20px 0;
+}
+
+.logo-section p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.links, .contact-info {
+  margin: 10px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/*------------------------------------------- Galeri ------------------------------------------------*/
+.galeri {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: #f8f8f8;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.navbar ul li {
+  padding: 5px 10px;
+}
+
+.navbar ul li.active {
+  color: red;
+}
+
+.navbar .dropdown {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+}
+
+.navbar ul li:hover .dropdown {
+  display: block;
+}
+
+.header-banner {
+  background-image: url("/header-banner.jpg");
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.gallery-section {
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.check-in-info {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+.footer {
+  background-color: #900;
+  color: white;
+  padding: 20px;
+}
+
+.footer .footer-links,
+.footer .contact-info {
+  margin: 10px;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+
+
