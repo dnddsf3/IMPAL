@@ -3,12 +3,13 @@ import Landing from './Pages/Landing';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Profile from './Pages/Profile';
-/*
 import Tentang from './Pages/Tentang';
+/*
 import Kamar from './Pages/Asrama';
 import Fasilitas from './Pages/Berita';
 import Galeri from './Pages/Galeri';
 */
+import Masalah from './Pages/Masalah';
 import Berita from './Pages/Berita';
 import InformasiAsrama from './Pages/InformasiAsrama';
 import Hubungi from './Pages/Hubungi';
@@ -26,14 +27,13 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Landing />} />
         <Route path="/profile" element={<Profile />} />
-        
-        {/*
         <Route path="/tentang" element={<Tentang />} />
+        {/*
         <Route path="/kontak" element={<Kontak />} />
         <Route path="/asrama" element={<Asrama />} />
-        <Route path="/asrama/berita" element={<Berita />} />
         <Route path="/asrama/galeri" element={<Galeri />} />
         */}
+        <Route path="/kontak/masalah" element={<Masalah />} />
         <Route path="/asrama/berita" element={<Berita />} />
         <Route path="/asrama/informasi-asrama" element={<InformasiAsrama />} />
         <Route path="/kontak/hubungi" element={<Hubungi />}/>
