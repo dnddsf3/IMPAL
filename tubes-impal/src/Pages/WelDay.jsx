@@ -41,7 +41,7 @@ const WelDay = () => {
         <nav className="navbar flex justify-center space-x-10 flex-grow">
           <button
             onClick={() => navigate("/")}
-            className="text-[#B41515] hover:text-[#B41515] border-b-2 border-[#B41515] pb-1"
+            className="text-[#1e1e1e] hover:text-[#B41515]"
           >
             Beranda
           </button>
@@ -56,7 +56,7 @@ const WelDay = () => {
           <div className="relative">
             <button
               onClick={toggleAsramaDropdown}
-              className="text-[#1E1E1E] hover:text-[#B41515] flex items-center"
+              className="text-[#B41515] hover:text-[#B41515] border-b-2 border-[#B41515] pb-1"
             >
               Asrama
               <span className="ml-2">▼</span>

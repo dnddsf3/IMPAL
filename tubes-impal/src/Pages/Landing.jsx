@@ -209,7 +209,7 @@ const Landing = () => {
       </div>
     </section>
 
-    <section className="map-section py-28 px-8 relative mt-28 flex items-center justify-between">
+    <section className="map-section py-28 px-8 relative mt--2 mr-24 ml-24 flex items-center justify-between">
       <div className="map-container flex-shrink-0">
         <img 
           src="https://hamsa.co.id/wp-content/uploads/2024/01/image_2024-02-07_213323604.png" 

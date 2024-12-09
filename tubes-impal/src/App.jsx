@@ -4,10 +4,10 @@ import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Profile from './Pages/Profile';
 import Tentang from './Pages/Tentang';
+import Galeri from './Pages/Galeri';
 /*
 import Kamar from './Pages/Asrama';
 import Fasilitas from './Pages/Berita';
-import Galeri from './Pages/Galeri';
 */
 import Masalah from './Pages/Masalah';
 import Berita from './Pages/Berita';
@@ -31,8 +31,8 @@ function App() {
         {/*
         <Route path="/kontak" element={<Kontak />} />
         <Route path="/asrama" element={<Asrama />} />
-        <Route path="/asrama/galeri" element={<Galeri />} />
         */}
+        <Route path="/asrama/galeri" element={<Galeri />} />
         <Route path="/kontak/masalah" element={<Masalah />} />
         <Route path="/asrama/berita" element={<Berita />} />
         <Route path="/asrama/informasi-asrama" element={<InformasiAsrama />} />
