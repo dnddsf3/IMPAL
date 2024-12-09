@@ -203,7 +203,7 @@ const FAQ = () => {
         </section>
 
         {/* Chat Section */}
-        <section className="dormbot-section">
+        <section className="dormbot-section mb-24">
           <h2>Tanya DormBot</h2>
           <div className="chat-container">
             <div className="chat-messages">

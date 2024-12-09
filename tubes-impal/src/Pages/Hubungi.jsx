@@ -117,7 +117,7 @@ const Hubungi = () => {
       </header>
 
       {/* Main Content */}
-      <div className="main-content flex flex-wrap justify-between items-start px-10 py-20">
+      <div className="main-content flex flex-wrap justify-between items-start px-10 mt-18 mb-32">
         <div className="contact-info w-2/3">
           <h1 className="text-2xl font-bold mb-4">Kontak Kami</h1>
           <p className="text-gray-600 mb-6">
