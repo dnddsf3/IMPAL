@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../../src/index.css";
 
 const Masalah = () => {
   const [fileName, setFileName] = useState('bukti_rusak.png');
