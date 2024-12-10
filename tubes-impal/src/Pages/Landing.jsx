@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../src/index.css";
+import "../../src/dinda.css";
 import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
@@ -116,26 +116,33 @@ const Landing = () => {
 
       </header>
 
-      <section className="hero text-center py-12 bg-gray-200">
-        {/*<img src="dormitory.jpg" alt="Dormitory" className="hero-image mx-auto w-3/4 md:w-1/2" />*/}
-        <img src="https://via.placeholder.com/1440x600" alt="Dormitory" className="hero-image mx-auto w-3/4 md:w-1/2" />
-        <h1 className="text-3xl font-bold mt-6">TELKOM UNIVERSITY DORMITORY</h1>
+      <section className="hero text-center">
+        <div className="relative w-full h-[400px]">
+          <img
+            src="https://dormitory.telkomuniversity.ac.id/wp-content/uploads/2022/11/4-1536x1024.jpg"
+            alt="Dormitory"
+            className="hero-image w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <h1 className="text-3xl font-bold text-white">TELKOM UNIVERSITY DORMITORY</h1>
+          </div>
+        </div>
       </section>
 
       <section className="intro py-12 px-4 text-center">
         <h2 className="text-2xl font-bold text-[#B41515]">ASRAMA TELKOM UNIVERSITY</h2>
-        <div className="flex items-center justify-center mt-4 space-x-8">
+        <div className="flex items-center justify-center mt-4 space-x-8 px-32 py-10">
           <img 
             src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDauO-C1vdx6SLqHBm9sH-XscdkXiyZ_O_JJelpF3QHweEFtt7leMgJcVoGE49TYgPilpGUhDM31bCba9VPnW_uN0LRnkZiANqs1CPB15uYwNGoAymhvwvMhSZA-SBz2JYdsNA9GKC8X1EfpuLj8CUmsSikpkoIvy3R3BnAnGEsXpHFKNbkBldvzzCHvU/s16000/Check%20in%20Asrama%20Telkom%20University%20Bandung%20(3).jpg" 
             alt="Asrama Telkom University" 
-            className="w-1/4 h-auto rounded-lg" 
+            className="w-1/3 h-auto rounded-lg" 
           />
-          <p className="text-[#1E1E1E] w-2/3 text-left">
+          <p className="text-[#1E1E1E] w-2/3 text-justify">
           Asrama Telkom University memiliki letak yang sangat strategis karena dekat  dengan gedung kuliah umum (Gd. Tokong Nanas 10 lantai). Asrama ini  menjadi salah satu sarana kampus yang dibangun untuk tempat tinggal  Mahasiswa/i baru pada 1 tahun pertama masa perkuliahan di Telkom  University sehingga para orang tua tidak perlu khawatir meninggalkan  putra dan putri untuk melanjutkan studinya. Luas keseluruhan asrama …  hektar yang terdiri dari 8 gedung asrama putri dan 10 gedung asrama  putra. Setiap gedung asrama memiliki kakak asrama yang biasa disebut  sebagai Senior Residents serta Helpdesk di setiap  lantai dasar gedung sehingga kenyamanan dan keamanan akan tetap terjaga. 
           </p>
         </div>
         <div className="info-cards flex flex-wrap justify-center mt-8 space-x-4">
-          <div className="card bg-white shadow-md p-4 rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <div className="card bg-[white] shadow-md p-4 rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
             <h3 className="font-semibold text-[#B41515]">Bangunan Asrama</h3>
             <p className="text-[#1E1E1E]">Bangunan Asrama Mahasiswa Telkom University terdiri dari 8 Gedung Asrama Putri dan 10 Gedung Asrama Putra.</p>
           </div>
@@ -209,12 +216,12 @@ const Landing = () => {
       </div>
     </section>
 
-    <section className="map-section py-28 px-8 relative mt--2 mr-24 ml-24 flex items-center justify-between">
-      <div className="map-container flex-shrink-0">
+    <section className="map-section py-28 px-48 relative flex items-center justify-between">
+      <div className="map-container">
         <img 
           src="https://hamsa.co.id/wp-content/uploads/2024/01/image_2024-02-07_213323604.png" 
           alt="Map" 
-          className="map w-96 h-auto rounded-lg"
+          className="map w-96 h-auto rounded-lg border-4 border-gray-300"
         />
       </div>
       

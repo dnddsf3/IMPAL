@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: OnestFont;
+  src: url(Onest-VariableFont_wght.ttf);
+}
+
+:root {
+  font-family: OnestFont, sans-serif;
+  color: white;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+}
+
+.body-landing {
+  background: white;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+/*---------------------------------------- Landing Page ----------------------------------------*/
+
+ 
+
+/*---------------------------------------- Login & Signup ----------------------------------------*/
+
+/* Layout Login */
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sisi kiri login input */
+.login-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 0 50px;
+}
+
+/* Bacaan login to mydorm */
+.login-left h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #b00000;
+}
+
+.input-container {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Sisi kanan login bagian sign up */
+.login-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #b00000;
+  color: white;
+  padding: 0 50px;
+  text-align: center;
+}
+
+/* Bacaan Hello! */
+.login-right h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Layout Signup */
+.signup-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Sisi kiri signup bagian login */
+.signup-left {
+  background-color: #b41515;
+  color: white;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Bacaan Welcome Back */
+.signup-left h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Jarak siapa punya akun sama button login */
+.signup-left p {
+  margin-bottom: 1.5rem;
+}
+
+/* Sisi kiri signup bagian login */
+.login-button {
+  background-color: #b41515;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: 2px solid white;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.login-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Sisi kanan signup */
+.signup-right {
+  background-color: white;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Bacaan Create Account */
+.signup-right h2 {
+  font-size: 2rem;
+  color: #b41515;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.input-container {
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 1rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  font-size: 1rem;
+}
+
+/* Button di bawah Hello! */
+.signup-button {
+  background-color: #b41515;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: 2px solid white;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 3rem;
+}
+
+.signup-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Error message */
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+/*------------------------------------ Berita Selengkapnya ------------------------------------*/
+
+/* Header Styling */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.berita-page .content img {
+  object-fit: cover;
+  height: auto;
+}
+
+.comments-section textarea {
+  resize: none;
+  color: black;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

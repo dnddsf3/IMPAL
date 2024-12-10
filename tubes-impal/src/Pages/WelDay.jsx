@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../src/index.css";
+import "../../src/dinda.css";
 
 const WelDay = () => {
   const [isAsramaDropdownOpen, setIsAsramaDropdownOpen] = useState(false);
