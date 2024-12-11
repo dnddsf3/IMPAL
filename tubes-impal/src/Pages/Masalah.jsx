@@ -17,6 +17,7 @@ const Masalah = () => {
   };
 
   return (
+<<<<<<< Updated upstream
     <div className="laporan-masalah">
     {/* Header */}
       <header className="header fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4 bg-white shadow-md z-50">
@@ -123,61 +124,60 @@ const Masalah = () => {
       </header>
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', maxWidth: '800px', margin: 'auto' }}>
       <h1 style={{ textAlign: 'center' }}>Laporkan Masalah</h1>
+=======
+    <div className="container">
+      <h1 className="title">Laporkan Masalah</h1>
+>>>>>>> Stashed changes
       <form>
-        <div style={{ marginBottom: '20px' }}>
+        <div className="form-group">
           <label>Nama Anda</label>
-          <input type="text" name="nama" placeholder="Dinda D" style={{ width: '100%', padding: '10px', marginTop: '5px' }} />
+          <input type="text" name="nama" placeholder="Dinda D" />
         </div>
 
-        <div style={{ marginBottom: '20px' }}>
+        <div className="form-group">
           <label>Email</label>
-          <input type="email" name="email" placeholder="dindes@student.telkomuniversity.ac.id" style={{ width: '100%', padding: '10px', marginTop: '5px' }} />
+          <input type="email" name="email" placeholder="dindes@student.telkomuniversity.ac.id" />
         </div>
 
-        <div style={{ marginBottom: '20px' }}>
+        <div className="form-group">
           <label>Nomor Telepon</label>
-          <input type="text" name="telepon" placeholder="081238472538" style={{ width: '100%', padding: '10px', marginTop: '5px' }} />
+          <input type="text" name="telepon" placeholder="081238472538" />
         </div>
 
-        <div style={{ marginBottom: '20px' }}>
+        <div className="form-group">
           <label>Lokasi</label>
-          <select name="lokasi" style={{ width: '100%', padding: '10px', marginTop: '5px' }}>
+          <select name="lokasi">
             <option value="Gedung A kamar 204">Gedung A kamar 204</option>
           </select>
         </div>
 
-        <div style={{ marginBottom: '20px' }}>
+        <div className="form-group">
           <label>Jenis Masalah</label>
-          <select name="jenis_masalah" style={{ width: '100%', padding: '10px', marginTop: '5px' }}>
+          <select name="jenis_masalah">
             <option value="Fasilitas rusak atau tidak memadai">Fasilitas rusak atau tidak memadai</option>
           </select>
         </div>
 
-        <div style={{ marginBottom: '20px' }}>
+        <div className="form-group">
           <label>Unggah Bukti</label>
-          <div style={{ border: '1px solid #ddd', padding: '10px', marginTop: '5px', backgroundColor: '#f0f9f0', textAlign: 'center' }}>
-            <input type="file" onChange={handleFileChange} style={{ display: 'none' }} id="fileUpload" />
-            <label htmlFor="fileUpload" style={{ cursor: 'pointer', color: 'red', marginBottom: '10px' }}>Edit File</label>
-            <p>{fileName}</p>
+          <div className="file-upload">
+            <input type="file" onChange={handleFileChange} id="fileUpload" />
+            <label htmlFor="fileUpload" className="file-edit">Edit File</label>
+            <p className="file-name">{fileName}</p>
           </div>
         </div>
 
-        <div style={{ marginBottom: '20px' }}>
+        <div className="form-group">
           <label>Deskripsi</label>
-          <textarea
-            name="deskripsi"
-            placeholder="Lemari rusak, ada yang patah"
-            style={{ width: '100%', padding: '10px', marginTop: '5px', height: '100px' }}
-          ></textarea>
+          <textarea name="deskripsi" placeholder="Lemari rusak, ada yang patah"></textarea>
         </div>
 
-        <div style={{ textAlign: 'center' }}>
-          <button type="submit" style={{ backgroundColor: 'red', color: 'white', padding: '10px 20px', border: 'none', cursor: 'pointer' }}>
-            Kirim
-          </button>
+        <div className="form-submit">
+          <button type="submit">Kirim</button>
         </div>
       </form>
 
+<<<<<<< Updated upstream
       {/* Footer */}
       <footer className="bg-red-700 text-white w-full">
         <div className="container mx-auto px-4 py-8">
@@ -239,6 +239,23 @@ const Masalah = () => {
           <div className="border-t border-white/20 mt-8 pt-8 text-center">
             <p>&copy; {new Date().getFullYear()} Telkom University. All rights reserved.</p>
           </div>
+=======
+      <footer className="footer">
+        <img
+          src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png"
+          alt="Telkom University"
+          className="footer-logo"
+        />
+        <div className="footer-links">
+          <a href="#link1">Link</a>
+          <a href="#link2">Link</a>
+        </div>
+        <div className="contact-info">
+          <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
+          <p>asrama@telkomuniversity.ac.id</p>
+          <p>Telkom University Students Dormitory Bandung Technoplex</p>
+          <p>Jl. Telekomunikasi Terusan Buah Batu, Kabupaten Bandung, Provinsi Jawa Barat, Indonesia</p>
+>>>>>>> Stashed changes
         </div>
       </footer>
     </div>

@@ -171,6 +171,7 @@ const Tentang = () => {
         </section>
       </main>
 
+<<<<<<< Updated upstream
       {/* Footer */}
       <footer className="bg-red-700 text-white ">
         <div className="container mx-auto px-4 py-8">
@@ -232,6 +233,23 @@ const Tentang = () => {
           <div className="border-t border-white/20 mt-8 pt-8 text-center">
             <p>&copy; {new Date().getFullYear()} Telkom University. All rights reserved.</p>
           </div>
+=======
+      <footer className="footer bg-[#B41515] text-white py-12 px-4 text-center">
+        <img
+          src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png"
+          alt="Telkom University"
+          className="footer-logo mx-auto mb-4 h-12"
+        />
+        <div className="footer-links ml-24 mr-24">
+          <a href="#link1" className="hover:underline">Link</a>
+          <a href="#link2" className="hover:underline">Link</a>        </div>
+        <div className="contact-info">
+          <div className="kontak font-bold">KONTAK</div>
+          <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
+          <p>asrama@telkomuniversity.ac.id</p>
+          <p>Telkom University Students Dormitory Bandung Technoplex</p>
+          <p>Jl. Telekomunikasi Terusan Buah Batu, Kabupaten Bandung, Provinsi Jawa Barat, Indonesia</p>
+>>>>>>> Stashed changes
         </div>
       </footer>
     </div>

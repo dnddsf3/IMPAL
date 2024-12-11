@@ -140,10 +140,10 @@ const Galeri = () => {
 
         <section className="gallery-section">
           <div className="gallery-grid">
-            <img src="/asrama1.jpg" alt="Asrama 1" />
-            <img src="/asrama2.jpg" alt="Asrama 2" />
-            <img src="/asrama3.jpg" alt="Asrama 3" />
-            <img src="/asrama4.jpg" alt="Asrama 4" />
+            <img src="/galeri3.png" alt="Asrama 1" />
+            <img src="/galeri4.png" alt="Asrama 2" />
+            <img src="/galeri5.png" alt="Asrama 3" />
+            <img src="/galeri6.png" alt="Asrama 4" />
             <img src="/asrama5.jpg" alt="Asrama 5" />
             <img src="/asrama6.jpg" alt="Asrama 6" />
           </div>
@@ -160,6 +160,7 @@ const Galeri = () => {
       </main>
 
       {/* Footer */}
+<<<<<<< Updated upstream
       <footer className="bg-red-700 text-white mt-auto">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -220,6 +221,23 @@ const Galeri = () => {
           <div className="border-t border-white/20 mt-8 pt-8 text-center">
             <p>&copy; {new Date().getFullYear()} Telkom University. All rights reserved.</p>
           </div>
+=======
+      <footer className="footer bg-[#B41515] text-white py-12 px-4 text-center">
+        <img
+          src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png"
+          alt="Telkom University"
+          className="footer-logo mx-auto mb-4 h-12"
+        />
+        <div className="footer-links ml-24 mr-24">
+          <a href="#link1" className="hover:underline">Link</a>
+          <a href="#link2" className="hover:underline">Link</a>        </div>
+        <div className="contact-info">
+          <div className="kontak font-bold">KONTAK</div>
+          <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
+          <p>asrama@telkomuniversity.ac.id</p>
+          <p>Telkom University Students Dormitory Bandung Technoplex</p>
+          <p>Jl. Telekomunikasi Terusan Buah Batu, Kabupaten Bandung, Provinsi Jawa Barat, Indonesia</p>
+>>>>>>> Stashed changes
         </div>
       </footer>
     </div>
