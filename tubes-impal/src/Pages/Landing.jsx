@@ -117,18 +117,18 @@ const Landing = () => {
       </header>
 
       <section className="hero text-center">
-        <div className="relative w-full h-[400px]">
-          <img
-            src="https://dormitory.telkomuniversity.ac.id/wp-content/uploads/2022/11/4-1536x1024.jpg"
-            alt="Dormitory"
-            className="hero-image w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <h1 className="text-3xl font-bold text-white">TELKOM UNIVERSITY DORMITORY</h1>
-          </div>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <img
+          src="https://dormitory.telkomuniversity.ac.id/wp-content/uploads/2022/11/4-1536x1024.jpg"
+          alt="Dormitory"
+          className="hero-image w-full h-auto max-h-[80vh] object-cover absolute inset-0"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center max-h-[80vh]">
+          <h1 className="text-3xl font-bold text-white mt-16">TELKOM UNIVERSITY DORMITORY</h1>
         </div>
+      </div>
       </section>
-
+      <section className="gap py-44"></section>
       <section className="intro py-12 px-4 text-center">
         <h2 className="text-2xl font-bold text-[#B41515]">ASRAMA TELKOM UNIVERSITY</h2>
         <div className="flex items-center justify-center mt-4 space-x-8 px-32 py-10">
@@ -216,7 +216,7 @@ const Landing = () => {
       </div>
     </section>
 
-    <section className="map-section py-28 px-48 relative flex items-center justify-between">
+    <section className="map-section py-12 px-48 relative flex items-center justify-between">
       <div className="map-container">
         <img 
           src="https://hamsa.co.id/wp-content/uploads/2024/01/image_2024-02-07_213323604.png" 
@@ -235,7 +235,7 @@ const Landing = () => {
 
 
       {/* Footer */}
-      <footer className="bg-red-700 text-white mt-auto">
+      <footer className="bg-red-700 text-white mt-12">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>

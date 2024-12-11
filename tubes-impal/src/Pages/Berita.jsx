@@ -39,7 +39,7 @@ const Berita = () => {
       publisher: 'Publisher',
       date: '20/10/2024',
     },
-    // Lorem ipsum items
+    
     ...Array(6).fill(null).map((_, index) => ({
       id: index + 4,
       title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
@@ -158,15 +158,12 @@ const Berita = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
       <div className="bg-red-700 py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-white text-4xl font-bold text-center">BERITA ASRAMA</h1>
         </div>
       </div>
 
-      {/* Rest of the component remains the same */}
-      {/* News Grid */}
       <main className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {newsItems.map(item => (
@@ -190,7 +187,7 @@ const Berita = () => {
           ))}
         </div>
 
-        {/* Pagination */}
+        {/* Pages */}
         <div className="flex justify-center mt-8 space-x-2">
           <button className="w-8 h-8 flex items-center justify-center border rounded hover:bg-gray-100">&laquo;</button>
           <button className="w-8 h-8 flex items-center justify-center border rounded hover:bg-gray-100">&lt;</button>

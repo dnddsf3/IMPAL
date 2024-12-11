@@ -32,7 +32,7 @@ const WelDay = () => {
 
   return (
     <div className="welcoming-day bg-gray-100 min-h-screen flex flex-col items-center pt-24">
-      <header className="header fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4 bg-white shadow-md z-50">
+      <header className="header fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4 bg-white shadow-md z-50 w-full">
         <img
           src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png"
           alt="Telkom University"
@@ -203,7 +203,7 @@ const WelDay = () => {
         </div>
 
         {/* Footer */}
-      <footer className="bg-red-700 text-white mt-auto">
+        <footer className="bg-red-700 text-white w-full">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>

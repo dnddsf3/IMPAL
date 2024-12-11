@@ -39,7 +39,7 @@ function Signup() {
     // Jika semua validasi lolos
     setError('');
     alert('Akun berhasil dibuat!');
-    navigate('/');  // Redirect ke halaman utama setelah registrasi sukses
+    navigate('/');
   };
 
   return (

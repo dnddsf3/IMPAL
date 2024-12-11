@@ -25,9 +25,7 @@ body {
   height: 100vh;
 }
 
-/*---------------------------------------- Landing Page ----------------------------------------*/
-
- 
+/*---------------------------------------- Landing Page ----------------------------------------*/ 
 
 /*---------------------------------------- Login & Signup ----------------------------------------*/
 
@@ -200,15 +198,6 @@ body {
 
 /*------------------------------------ Berita Selengkapnya ------------------------------------*/
 
-/* Header Styling */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-}
-
 .berita-page .content img {
   object-fit: cover;
   height: auto;
@@ -217,13 +206,4 @@ body {
 .comments-section textarea {
   resize: none;
   color: black;
-}
-
-.footer a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
 }

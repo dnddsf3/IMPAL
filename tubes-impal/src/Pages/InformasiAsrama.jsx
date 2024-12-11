@@ -142,7 +142,6 @@ const InformasiAsrama = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
       <div className="relative h-[60vh]">
         <img 
           src="/asrama-hero.jpg" 
@@ -157,7 +156,6 @@ const InformasiAsrama = () => {
         </div>
       </div>
 
-      {/* Building and Room Section */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center text-red-800 mb-12">GEDUNG DAN KAMAR</h2>
         <div className="grid md:grid-cols-2 gap-8">
@@ -187,7 +185,6 @@ const InformasiAsrama = () => {
         </div>
       </section>
 
-      {/* Facilities Section */}
       <section className="bg-gray-100 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-red-800 mb-12">FASILITAS</h2>
@@ -211,7 +208,6 @@ const InformasiAsrama = () => {
         </div>
       </section>
 
-      {/* Rules Section */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center text-red-800 mb-12">TATA TERTIB</h2>
         <div className="grid md:grid-cols-2 gap-8">

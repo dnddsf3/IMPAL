@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const NotificationDetail = () => {
   const navigate = useNavigate();
 
-  // Sample notification detail - this would typically come from props or state
   const notification = {
     id: 2,
     date: '08/10/2024',
