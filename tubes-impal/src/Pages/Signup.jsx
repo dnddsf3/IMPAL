@@ -26,7 +26,7 @@ function Signup() {
 
     // Validasi email
     if (!email.includes('@') || !email.includes('student.telkomuniversity.ac.id')) {
-      setError('Email tidak valid! Harus menggunakan domain @student.telkomuniversity.ac.id');
+      setError('Email harus menggunakan domain @student.telkomuniversity.ac.id');
       return;
     }
 
@@ -91,7 +91,7 @@ function Signup() {
             />
           </div>
           {error && <p className="error-message">{error}</p>}
-          <button type="submit" className="signup-button">Sign Up</button>
+          <button type="submit" className="signup-buttonn">Sign Up</button>
         </form>
       </div>
     </div>

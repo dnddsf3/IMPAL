@@ -124,7 +124,7 @@ const Landing = () => {
           className="hero-image w-full h-auto max-h-[80vh] object-cover absolute inset-0"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center max-h-[80vh]">
-          <h1 className="text-3xl font-bold text-white mt-16">TELKOM UNIVERSITY DORMITORY</h1>
+          <h1 className="text-3xl font-bold text-white mt-24">TELKOM UNIVERSITY DORMITORY</h1>
         </div>
       </div>
       </section>
@@ -193,7 +193,58 @@ const Landing = () => {
       </div>
     </section>
 
+    <section className="activities py-12 px-4">
+      <h2 className="text-2xl font-bold text-center text-[#B41515]">KEGIATAN ASRAMA</h2>
+      <p className="text-4x1 mt-4 font-medium text-center text-[#444444]">
+        Kegiatan asrama untuk meningkatkan kebersamaan, keterampilan, dan pengalaman berharga bagi seluruh penghuni.
+      </p>
+      <div className="activity-list flex flex-col items-center mt-8 space-y-4">
+        <div className="activity flex bg-white p-4 rounded-lg shadow-md w-full max-w-2xl">
+          <div className="date-box flex flex-col items-center bg-[#B41515] text-white font-semibold w-16 h-20 mr-4">
+            <p className="text-xl mt-1">10</p>
+            <p className="text-sm">Okt</p>
+            <div className="year-box bg-[#585858] text-white text-xs font-medium w-full h-6 text-center mt-1 py-1">
+              2024
+            </div>
+          </div>
+          <div className="details">
+            <h3 className="font-semibold text-[#B41515]">Dorm Sport and Fun Games</h3>
+            <p className="font-medium text-[#444444]">Kerja tim dan penyegaran</p>
+            <p className="text-[#B41515]">08:00 - 16:00</p>
+          </div>
+        </div>
+        <div className="activity flex bg-white p-4 rounded-lg shadow-md w-full max-w-2xl">
+          <div className="date-box flex flex-col items-center bg-[#B41515] text-white font-semibold w-16 h-20 mr-4">
+            <p className="text-xl mt-1">19</p>
+            <p className="text-sm">Okt</p>
+            <div className="year-box bg-[#585858] text-white text-xs font-medium w-full h-6 text-center mt-1 py-1">
+              2024
+            </div>
+          </div>
+          <div className="details">
+            <h3 className="font-semibold text-[#B41515]">Dorm Percussion</h3>
+            <p className="font-medium text-[#444444]">Belajar tentang harmonis dan kerja sama</p>
+            <p className="text-[#B41515]">09:15</p>
+          </div>
+        </div>
+        <div className="activity flex bg-white p-4 rounded-lg shadow-md w-full max-w-2xl">
+          <div className="date-box flex flex-col items-center bg-[#B41515] text-white font-semibold w-16 h-20 mr-4">
+            <p className="text-xl mt-1">20</p>
+            <p className="text-sm">Okt</p>
+            <div className="year-box bg-[#585858] text-white text-xs font-medium w-full h-6 text-center mt-1 py-1">
+              2024
+            </div>
+          </div>
+          <div className="details">
+            <h3 className="font-semibold text-[#B41515]">Dorm Academic Week</h3>
+            <p className="font-medium text-[#444444]">Talk Show tentang akademik</p>
+            <p className="text-[#B41515]">10:00 - 12:00</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    {/*
     <section className="activities py-12 px-4">
       <h2 className="text-2xl font-bold text-center text-[#B41515]">KEGIATAN ASRAMA</h2>
       <p className="text-4x1 mt-4 font-medium text-center text-[#444444]">Kegiatan asrama untuk meningkatkan kebersamaan, keterampilan, dan pengalaman berharga bagi seluruh penghuni.</p>
@@ -215,6 +266,7 @@ const Landing = () => {
         </div>
       </div>
     </section>
+    */}
 
     <section className="map-section py-12 px-48 relative flex items-center justify-between">
       <div className="map-container">

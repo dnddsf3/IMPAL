@@ -141,9 +141,9 @@ const WelDay = () => {
 
       <div className="content bg-white shadow-md rounded-lg mt-8 w-11/12 max-w-4xl">
         <img
-          src="https://via.placeholder.com/800x400"
+          src="https://smb.telkomuniversity.ac.id/wp-content/uploads/2023/05/Asrama-1.jpg"
           alt="Welcoming Day"
-          className="rounded-t-lg w-full"
+          className="rounded-t-lg w-[900px] h-[450px] object-cover"
         />
         <div className="p-6 text-justify">
           <h1 className="text-3xl font-bold mb-2 text-[#B41515]">Welcoming Day</h1>

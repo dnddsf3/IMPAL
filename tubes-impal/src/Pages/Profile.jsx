@@ -242,14 +242,18 @@ const Profile = () => {
 
             {activeTab === 'setting' && (
               <div className="space-y-4 text-gray-900">
-              <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Edit profile</button>
-              <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Help</button>
-              <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Terms and conditions</button>
-              <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Privacy policy</button>
-              <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Change password</button>
-              <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Log out</button>
-            </div>
-
+                <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Edit profile</button>
+                <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Help</button>
+                <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Terms and conditions</button>
+                <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Privacy policy</button>
+                <button className="w-full text-left px-4 py-3 hover:bg-gray-50">Change password</button>
+                <button
+                  className="w-full text-left px-4 py-3 hover:bg-gray-50"
+                  onClick={() => navigate('/login')}
+                >
+                  Log out
+                </button>
+              </div>
             )}
 
             {activeTab === 'notifications' && (
