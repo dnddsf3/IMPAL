@@ -51,18 +51,31 @@ const Berita = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
       <header className="header fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4 bg-white shadow-md z-50">
-        <img src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png" alt="Telkom University" className="logo h-12" />
+        <img
+          src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png"
+          alt="Telkom University"
+          className="logo h-12"
+        />
         <nav className="navbar flex justify-center space-x-10 flex-grow">
-          <button onClick={() => navigate("/")} className="text-[#1E1E1E] hover:text-[#B41515]">Beranda</button>
-          <button onClick={() => navigate("/tentang")} className="text-[#1E1E1E] hover:text-[#B41515]">Tentang</button>
+          <button
+            onClick={() => navigate("/")}
+            className="text-[#1e1e1e] hover:text-[#B41515]"
+          >
+            Beranda
+          </button>
+          <button
+            onClick={() => navigate("/tentang")}
+            className="text-[#1E1E1E] hover:text-[#B41515]"
+          >
+            Tentang
+          </button>
 
           {/* dropdown Asrama */}
           <div className="relative">
             <button
               onClick={toggleAsramaDropdown}
-              className="text-[#1E1E1E] hover:text-[#B41515] flex items-center"
+              className="text-[#B41515] hover:text-[#B41515] border-b-2 border-[#B41515] pb-1"
             >
               Asrama
               <span className="ml-2">▼</span>
@@ -136,11 +149,11 @@ const Berita = () => {
         </nav>
 
         <div className="header-icons flex space-x-4">
-          <img 
-            src="/user.png" 
-            alt="User Profile" 
+          <img
+            src="public/user2.png"
+            alt="User Profile"
             className="profile-icon w-8 h-8 cursor-pointer"
-            onClick={() => navigate("/profile")} 
+            onClick={() => navigate("/profile")}
           />
         </div>
       </header>

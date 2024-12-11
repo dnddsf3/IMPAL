@@ -1,31 +1,128 @@
-import React from "react";
-import "../../src/index.css";
+import React, { useState } from "react"; // Import useState and other necessary hooks
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import "../../src/index.css"; // CSS file import
 
-function Galeri() {
+const Galeri = () => {
+  const [isAsramaDropdownOpen, setIsAsramaDropdownOpen] = useState(false);
+  const [isKontakDropdownOpen, setIsKontakDropdownOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const toggleAsramaDropdown = () => {
+    setIsAsramaDropdownOpen(!isAsramaDropdownOpen);
+    setIsKontakDropdownOpen(false); // Close other dropdown
+  };
+  
+  const toggleKontakDropdown = () => {
+    setIsKontakDropdownOpen(!isKontakDropdownOpen);
+    setIsAsramaDropdownOpen(false); // Close other dropdown
+  };
+
   return (
     <div className="galeri">
-      {/* Header */}
-      <header className="header">
-        <nav className="navbar">
-          <ul>
-            <li>Beranda</li>
-            <li>Tentang</li>
-            <li className="active">Asrama</li>
-            <ul className="dropdown">
-              <li>Informasi Asrama</li>
-              <li>Berita</li>
-              <li>Galeri</li>
-              <li>TokenPay</li>
-            </ul>
-            <li>Kontak</li>
-          </ul>
-          <div className="search-profile">
-            <input type="text" placeholder="Search" />
-            <span className="profile-icon"></span>
+      <header className="header fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4 bg-white shadow-md z-50">
+        <img
+          src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png"
+          alt="Telkom University"
+          className="logo h-12"
+        />
+        <nav className="navbar flex justify-center space-x-10 flex-grow">
+          <button
+            onClick={() => navigate("/")}
+            className="text-[#1e1e1e] hover:text-[#B41515]"
+          >
+            Beranda
+          </button>
+          <button
+            onClick={() => navigate("/tentang")}
+            className="text-[#1E1E1E] hover:text-[#B41515]"
+          >
+            Tentang
+          </button>
+
+          {/* dropdown Asrama */}
+          <div className="relative">
+            <button
+              onClick={toggleAsramaDropdown}
+              className="text-[#B41515] hover:text-[#B41515] border-b-2 border-[#B41515] pb-1"
+            >
+              Asrama
+              <span className="ml-2">▼</span>
+            </button>
+
+            {/* dropdown */}
+            {isAsramaDropdownOpen && (
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
+                <button
+                  onClick={() => navigate("/asrama/informasi-asrama")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Informasi Asrama
+                </button>
+                <button
+                  onClick={() => navigate("/asrama/berita")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Berita
+                </button>
+                <button
+                  onClick={() => navigate("/asrama/galeri")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Galeri
+                </button>
+                <button
+                  onClick={() => navigate("/asrama/tokenpay")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  TokenPay
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* dropdown Kontak */}
+          <div className="relative">
+            <button
+              onClick={toggleKontakDropdown}
+              className="text-[#1E1E1E] hover:text-[#B41515] flex items-center"
+            >
+              Kontak
+              <span className="ml-2">▼</span>
+            </button>
+
+            {/* dropdown */}
+            {isKontakDropdownOpen && (
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
+                <button
+                  onClick={() => navigate("/kontak/hubungi")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Hubungi
+                </button>
+                <button
+                  onClick={() => navigate("/kontak/masalah")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Laporan Masalah
+                </button>
+                <button
+                  onClick={() => navigate("/kontak/faq")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  FAQ
+                </button>
+              </div>
+            )}
           </div>
         </nav>
-        <div className="header-banner">
-          <h1>GALLERY</h1>
+
+        <div className="header-icons flex space-x-4">
+          <img
+            src="public/user2.png"
+            alt="User Profile"
+            className="profile-icon w-8 h-8 cursor-pointer"
+            onClick={() => navigate("/profile")}
+          />
         </div>
       </header>
 

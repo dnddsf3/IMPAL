@@ -1,14 +1,126 @@
 import React, { useState } from 'react';
 import "../../src/index.css";
+import { useNavigate } from "react-router-dom";
 
 const Masalah = () => {
   const [fileName, setFileName] = useState('bukti_rusak.png');
+  
+  const navigate = useNavigate();
+    const [isAsramaDropdownOpen, setAsramaDropdownOpen] = useState(false);
+    const [isKontakDropdownOpen, setKontakDropdownOpen] = useState(false);
+  
+    const toggleAsramaDropdown = () => setAsramaDropdownOpen(!isAsramaDropdownOpen);
+    const toggleKontakDropdown = () => setKontakDropdownOpen(!isKontakDropdownOpen);
 
   const handleFileChange = (event) => {
     setFileName(event.target.files[0].name);
   };
 
   return (
+    <div className="laporan-masalah">
+    {/* Header */}
+      <header className="header fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4 bg-white shadow-md z-50">
+        <img
+          src="https://mf-chan.com/tel-u-logo/lib/Tel-U/primer-utama.png"
+          alt="Telkom University"
+          className="logo h-12"
+        />
+        <nav className="navbar flex justify-center space-x-10 flex-grow">
+          <button
+            onClick={() => navigate("/")}
+            className="text-[#1E1E1E] hover:text-[#B41515]"
+          >
+            Beranda
+          </button>
+          <button
+            onClick={() => navigate("/tentang")}
+            className="text-[#1E1E1E] hover:text-[#B41515]"
+          >
+            Tentang
+          </button>
+
+          {/* Dropdown Asrama */}
+          <div className="relative">
+            <button
+              onClick={toggleAsramaDropdown}
+              className="text-[#1E1E1E] hover:text-[#B41515] flex items-center"
+            >
+              Asrama
+              <span className="ml-2">▼</span>
+            </button>
+            {isAsramaDropdownOpen && (
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 w-48 z-10">
+                <button
+                  onClick={() => navigate("/asrama/informasi-asrama")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Informasi Asrama
+                </button>
+                <button
+                  onClick={() => navigate("/asrama/berita")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Berita
+                </button>
+                <button
+                  onClick={() => navigate("/asrama/galeri")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Galeri
+                </button>
+                <button
+                  onClick={() => navigate("/asrama/tokenpay")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  TokenPay
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Dropdown Kontak */}
+          <div className="relative">
+            <button
+              onClick={toggleKontakDropdown}
+              className="text-[#B41515] hover:text-[#B41515] border-b-2 border-[#B41515] pb-1"
+            >
+              Kontak
+              <span className="ml-2">▼</span>
+            </button>
+            {isKontakDropdownOpen && (
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 w-48 z-10">
+                <button
+                  onClick={() => navigate("/kontak/hubungi")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Hubungi
+                </button>
+                <button
+                  onClick={() => navigate("/kontak/masalah")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  Laporan Masalah
+                </button>
+                <button
+                  onClick={() => navigate("/kontak/faq")}
+                  className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
+                >
+                  FAQ
+                </button>
+              </div>
+            )}
+          </div>
+        </nav>
+
+        <div className="header-icons flex space-x-4">
+          <img
+            src="/user.png"
+            alt="User Profile"
+            className="profile-icon w-8 h-8 cursor-pointer"
+            onClick={() => navigate("/profile")}
+          />
+        </div>
+      </header>
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', maxWidth: '800px', margin: 'auto' }}>
       <h1 style={{ textAlign: 'center' }}>Laporkan Masalah</h1>
       <form>
@@ -129,6 +241,7 @@ const Masalah = () => {
           </div>
         </div>
       </footer>
+    </div>
     </div>
   );
 };

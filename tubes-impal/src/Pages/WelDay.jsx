@@ -66,7 +66,7 @@ const WelDay = () => {
             {isAsramaDropdownOpen && (
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg mt-2 right-0 w-48 z-10">
                 <button
-                  onClick={() => navigate("/asrama/asrama")}
+                  onClick={() => navigate("/asrama/informasi-asrama")}
                   className="block px-4 py-2 text-[#1E1E1E] hover:bg-gray-200"
                 >
                   Informasi Asrama
