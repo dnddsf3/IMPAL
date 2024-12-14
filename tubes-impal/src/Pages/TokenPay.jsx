@@ -226,5 +226,3 @@ const TokenPayPage = () => {
     </div>
   );
 };
-
-export default TokenPayPage;
