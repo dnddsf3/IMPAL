@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const TokenPayPage = () => {
+const TokenPay = () => {
   const [meterNumber, setMeterNumber] = useState('');
   const [whatsappNumber, setWhatsappNumber] = useState('');
   const [promoCode, setPromoCode] = useState('');
@@ -226,3 +226,5 @@ const TokenPayPage = () => {
     </div>
   );
 };
+
+export default TokenPay;
