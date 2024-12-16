@@ -32,7 +32,7 @@ function Signup() {
 
     // Validasi password
     if (!validatePassword(password)) {
-      setError('Password harus minimal 8 karakter dan mengandung huruf serta angka.');
+      setError('Password minimal 8 karakter dan mengandung huruf serta angka.');
       return;
     }
 

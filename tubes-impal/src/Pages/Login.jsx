@@ -67,9 +67,9 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit" className="login-button">Log In</button>
+          {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Posisi error message */}
+          <button type="submit" className="login-buttonn">Log In</button>
         </form>
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
       </div>
       <div className="login-right">
         <h2>Hello!</h2>
